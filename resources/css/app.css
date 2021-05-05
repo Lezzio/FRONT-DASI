@@ -15,6 +15,7 @@ body {
 
 #navbar {
   height: 100px;
+  padding-top: 10px;
   width: 100%;
 }
 #navbar > a > .button {
@@ -37,6 +38,7 @@ body {
 #middle-container {
   width: 600px;
   height: 600px;
+  padding-top: 120px;
   margin: auto;
 }
 #middle-container > .login-title {
@@ -59,6 +61,35 @@ body {
   margin: 20px;
   border: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+#middle-container > .switch-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+}
+#middle-container > .switch-container > .switch-groove {
+  width: 60px;
+  height: 0.8em;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 8px;
+}
+#middle-container > .switch-container > .switch-groove > #switch-indicator {
+  margin-top: 0.5px;
+  margin-left: 1px;
+  margin-right: 1px;
+  width: 44%;
+  height: 90%;
+  border-radius: 10px;
+  background-color: #AE76FF;
+}
+#middle-container > .switch-container > .switch-groove > #switch-indicator.left {
+  float: left;
+}
+#middle-container > .switch-container > .switch-groove > #switch-indicator.right {
+  float: right;
 }
 #middle-container > .login-button {
   display: flex;

@@ -13,6 +13,7 @@ body {
 
 #navbar {
   height: 100px;
+  padding-top: 10px;
   width: 100%;
   > a > .button {
     cursor: pointer;
@@ -39,6 +40,7 @@ body {
 #middle-container {
   width: 600px;
   height: 600px;
+  padding-top: 120px;
   margin: auto;
 
   > .login-title {
@@ -63,6 +65,40 @@ body {
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     }
 
+  }
+
+  > .switch-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+
+    > .switch-groove {
+      width: 60px;
+      height: 0.8em;
+      background-color: white;
+      border-radius: 10px;
+      margin: 0 8px;
+
+      > #switch-indicator {
+        margin-top: 0.5px;
+        margin-left: 1px;
+        margin-right: 1px;
+        width: 44%;
+        height: 90%;
+        border-radius: 10px;
+        background-color: #AE76FF;
+
+        &.left {
+          float: left;
+        }
+        &.right {
+          float: right;
+        }
+      }
+
+    }
   }
 
   > .login-button {
