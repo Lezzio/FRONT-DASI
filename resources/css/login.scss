@@ -1,0 +1,84 @@
+@use "commons";
+
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../resources/images/gradient4.svg");
+  background-size: cover;
+  font-family: "Microsoft Yi Baiti", "Verdana", sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  height: 100px;
+  width: 100%;
+  > a > .button {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 22px;
+    @extend %base-transition-duration;
+    &:hover {
+      @extend %base-transition-duration;
+      transform: scale(1.1);
+    }
+    &.left {
+      float: left;
+      margin-left: 40px;
+    }
+
+    &.right {
+      float: right;
+      margin-right: 80px;
+    }
+
+  }
+}
+
+#middle-container {
+  width: 600px;
+  height: 600px;
+  margin: auto;
+
+  > .login-title {
+    width: fit-content;
+    font-size: 30px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  > .login-form {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    > input {
+      text-align: center;
+      display: block;
+      padding: 5px;
+      width: 320px;
+      margin: 20px;
+      border: 0;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    }
+
+  }
+
+  > .login-footer {
+    width: fit-content;
+    margin: auto;
+    > span {
+      cursor: pointer;
+      color: #AE76FF;
+      @extend %base-transition-duration;
+      &:hover {
+        @extend %base-transition-duration;
+        text-decoration: underline;
+        font-size: 17px;
+      }
+    }
+  }
+
+}
+
