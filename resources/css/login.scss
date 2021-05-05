@@ -65,6 +65,26 @@ body {
 
   }
 
+  > .login-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: 50px auto;
+    font-size: 12px;
+    height: 24px;
+    text-align: center;
+    background-color: #AE76FF;
+    border-radius: 10px;
+    cursor: pointer;
+
+    @extend %base-transition-duration;
+    &:hover {
+      @extend %base-transition-duration;
+      transform: scale(1.06);
+    }
+  }
+
   > .login-footer {
     width: fit-content;
     margin: auto;
@@ -75,7 +95,6 @@ body {
       &:hover {
         @extend %base-transition-duration;
         text-decoration: underline;
-        font-size: 17px;
       }
     }
   }

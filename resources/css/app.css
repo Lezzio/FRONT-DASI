@@ -1,4 +1,4 @@
-#navbar > a > .button, #navbar > a > .button:hover, #middle-container > .login-footer > span, #middle-container > .login-footer > span:hover {
+#navbar > a > .button, #navbar > a > .button:hover, #middle-container > .login-button, #middle-container > .login-button:hover, #middle-container > .login-footer > span, #middle-container > .login-footer > span:hover {
   transition-duration: 0.3s;
 }
 
@@ -60,6 +60,22 @@ body {
   border: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
+#middle-container > .login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  margin: 50px auto;
+  font-size: 12px;
+  height: 24px;
+  text-align: center;
+  background-color: #AE76FF;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#middle-container > .login-button:hover {
+  transform: scale(1.06);
+}
 #middle-container > .login-footer {
   width: fit-content;
   margin: auto;
@@ -70,7 +86,6 @@ body {
 }
 #middle-container > .login-footer > span:hover {
   text-decoration: underline;
-  font-size: 17px;
 }
 
 /*# sourceMappingURL=app.css.map */
