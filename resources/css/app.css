@@ -13,6 +13,10 @@ body {
   padding: 0;
 }
 
+a {
+  color: white;
+}
+
 #navbar {
   height: 100px;
   padding-top: 10px;
@@ -53,7 +57,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-#middle-container > .login-form > input {
+#middle-container > .login-form > .large-input {
   text-align: center;
   display: block;
   padding: 5px;

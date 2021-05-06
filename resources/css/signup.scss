@@ -10,6 +10,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 a {
   color: white;
 }
@@ -43,7 +44,7 @@ a {
 #middle-container {
   width: 600px;
   height: 600px;
-  padding-top: 120px;
+  padding-top: 60px;
   margin: auto;
 
   > .login-title {
@@ -59,52 +60,33 @@ a {
     margin-left: auto;
     margin-right: auto;
 
-    > .large-input {
-      text-align: center;
-      display: block;
-      padding: 5px;
-      width: 400px;
-      height: 1.2em;
-      font-size: 18px;
+    > div {
+      width: 410px;
+      height: 32px;
+      box-sizing: border-box;
       margin: 20px;
-      border: 0;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-    }
 
-    }
-
-  > .switch-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 30px auto 20px auto;
-
-    > .switch-selector {
-      cursor: pointer;
-      font-size: 18px;
-      @extend %base-transition-duration;
-      &:hover {
-        @extend %base-transition-duration;
-        color: #1967bf
+      > .large-input {
+        text-align: center;
+        vertical-align: middle;
+        display: block;
+        width: 400px;
+        height: 1.2em;
+        padding: 5px;
+        font-size: 18px;
+        border: 0;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
       }
-    }
 
-    > .switch-groove {
-      width: 60px;
-      height: 1em;
-      background-color: white;
-      border-radius: 10px;
-      margin: 0 8px;
-
-      > #switch-indicator {
-        margin-top: 0.5px;
-        margin-left: 1px;
-        margin-right: 1px;
-        width: 44%;
-        height: 90%;
-        border-radius: 10px;
-        background-color: #AE76FF;
+      > .medium-input {
+        text-align: center;
+        display: block;
+        width: 180px;
+        height: 1.2em;
+        padding: 5px 0 5px 0;
+        font-size: 18px;
+        border: 0;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 
         &.left {
           float: left;
@@ -112,9 +94,14 @@ a {
         &.right {
           float: right;
         }
+        &.center {
+          margin: auto;
+        }
+
       }
 
     }
+
   }
 
   > .login-button {
