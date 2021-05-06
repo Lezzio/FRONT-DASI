@@ -74,6 +74,15 @@ body {
     align-items: center;
     margin: 40px auto;
 
+    > .switch-selector {
+      cursor: pointer;
+      @extend %base-transition-duration;
+      &:hover {
+        @extend %base-transition-duration;
+        color: #1967bf
+      }
+    }
+
     > .switch-groove {
       width: 60px;
       height: 0.8em;

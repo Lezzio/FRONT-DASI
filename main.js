@@ -1,16 +1,22 @@
 console.log("Hey!")
 
+//Holds the switch target for log in
+let switchSelection = "Client"
+
 $(document).ready(function () {
-
-    $("#switch-indicator").click(switchToggle)
-
+    $("#switch-selector-client").click(switchClient)
+    $("#switch-selector-employee").click(switchEmployee)
 });
+function switchClient() {
+    const target = $("#switch-indicator")
+    switchSelection = "Client"
+    target.addClass("left");
+    target.removeClass("right");
+}
 
-function switchToggle(event) {
-    const target = event.target;
-    if (target.className === "right") {
-        target.className = "left";
-    } else {
-        target.className = "right";
-    }
+function switchEmployee() {
+    const target = $("#switch-indicator")
+    switchSelection = "Employee"
+    target.addClass("right");
+    target.removeClass("left");
 }

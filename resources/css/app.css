@@ -1,4 +1,4 @@
-#navbar > a > .button, #navbar > a > .button:hover, #middle-container > .login-button, #middle-container > .login-button:hover, #middle-container > .login-footer > span, #middle-container > .login-footer > span:hover {
+#navbar > a > .button, #navbar > a > .button:hover, #middle-container > .switch-container > .switch-selector, #middle-container > .switch-container > .switch-selector:hover, #middle-container > .login-button, #middle-container > .login-button:hover, #middle-container > .login-footer > span, #middle-container > .login-footer > span:hover {
   transition-duration: 0.3s;
 }
 
@@ -68,6 +68,12 @@ body {
   justify-content: center;
   align-items: center;
   margin: 40px auto;
+}
+#middle-container > .switch-container > .switch-selector {
+  cursor: pointer;
+}
+#middle-container > .switch-container > .switch-selector:hover {
+  color: #1967bf;
 }
 #middle-container > .switch-container > .switch-groove {
   width: 60px;
