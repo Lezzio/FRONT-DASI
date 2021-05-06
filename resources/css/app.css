@@ -43,7 +43,7 @@ body {
 }
 #middle-container > .login-title {
   width: fit-content;
-  font-size: 30px;
+  font-size: 38px;
   margin: auto;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -57,7 +57,9 @@ body {
   text-align: center;
   display: block;
   padding: 5px;
-  width: 320px;
+  width: 400px;
+  height: 1.2em;
+  font-size: 18px;
   margin: 20px;
   border: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
@@ -67,17 +69,18 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 40px auto;
+  margin: 30px auto 20px auto;
 }
 #middle-container > .switch-container > .switch-selector {
   cursor: pointer;
+  font-size: 18px;
 }
 #middle-container > .switch-container > .switch-selector:hover {
   color: #1967bf;
 }
 #middle-container > .switch-container > .switch-groove {
   width: 60px;
-  height: 0.8em;
+  height: 1em;
   background-color: white;
   border-radius: 10px;
   margin: 0 8px;
@@ -101,17 +104,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 260px;
+  height: 34px;
   margin: 50px auto;
-  font-size: 12px;
-  height: 24px;
+  font-size: 14px;
   text-align: center;
   background-color: #AE76FF;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
 }
 #middle-container > .login-button:hover {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 #middle-container > .login-footer {
   width: fit-content;
@@ -119,6 +122,7 @@ body {
 }
 #middle-container > .login-footer > span {
   cursor: pointer;
+  font-weight: bold;
   color: #AE76FF;
 }
 #middle-container > .login-footer > span:hover {
