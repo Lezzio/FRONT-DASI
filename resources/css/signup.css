@@ -1,0 +1,125 @@
+#navbar > a > .button, #navbar > a > .button:hover, #middle-container > .login-button, #middle-container > .login-button:hover, #middle-container > .login-footer > span, #middle-container > .login-footer > span:hover {
+  transition-duration: 0.3s;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../resources/images/gradient4.svg");
+  background-size: cover;
+  font-family: "Microsoft Yi Baiti", "Verdana", sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+}
+
+#navbar {
+  height: 100px;
+  padding-top: 10px;
+  width: 100%;
+}
+#navbar > a > .button {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 22px;
+}
+#navbar > a > .button:hover {
+  transform: scale(1.1);
+}
+#navbar > a > .button.left {
+  float: left;
+  margin-left: 40px;
+}
+#navbar > a > .button.right {
+  float: right;
+  margin-right: 80px;
+}
+
+#middle-container {
+  width: 600px;
+  height: 600px;
+  padding-top: 60px;
+  margin: auto;
+}
+#middle-container > .login-title {
+  width: fit-content;
+  font-size: 38px;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#middle-container > .login-form {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+#middle-container > .login-form > div {
+  width: 410px;
+  height: 32px;
+  box-sizing: border-box;
+  margin: 20px;
+}
+#middle-container > .login-form > div > .large-input {
+  text-align: center;
+  vertical-align: middle;
+  display: block;
+  width: 400px;
+  height: 1.2em;
+  padding: 5px;
+  font-size: 18px;
+  border: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+#middle-container > .login-form > div > .medium-input {
+  text-align: center;
+  display: block;
+  width: 180px;
+  height: 1.2em;
+  padding: 5px 0 5px 0;
+  font-size: 18px;
+  border: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+#middle-container > .login-form > div > .medium-input.left {
+  float: left;
+}
+#middle-container > .login-form > div > .medium-input.right {
+  float: right;
+}
+#middle-container > .login-form > div > .medium-input.center {
+  margin: auto;
+}
+#middle-container > .login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 260px;
+  height: 34px;
+  margin: 50px auto;
+  font-size: 14px;
+  text-align: center;
+  background-color: #AE76FF;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#middle-container > .login-button:hover {
+  transform: scale(1.04);
+}
+#middle-container > .login-footer {
+  width: fit-content;
+  margin: auto;
+}
+#middle-container > .login-footer > span {
+  cursor: pointer;
+  font-weight: bold;
+  color: #AE76FF;
+}
+#middle-container > .login-footer > span:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=signup.css.map */
