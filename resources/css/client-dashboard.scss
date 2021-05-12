@@ -44,7 +44,7 @@ a {
 
 .main-content {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 70px); //Minus navbar
 
   .client-profile {
     height: 100%;
@@ -62,12 +62,10 @@ a {
       text-align: center;
       line-height: 2em;
       color: white;
-      margin-bottom: 15px;
     }
 
     > .profile-form {
       width: 100%;
-      height: 100%;
 
       > label {
         display: block;
@@ -98,7 +96,7 @@ a {
           font-size: 18px;
           border: 0;
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-          margin: 5px auto;
+          margin: 8px auto;
           border-radius: 10px;
         }
 
@@ -111,7 +109,7 @@ a {
           font-size: 18px;
           border: 0;
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-          margin: 5px 15px;
+          margin: 8px 15px;
           border-radius: 10px;
 
           &.left {
@@ -128,6 +126,52 @@ a {
 
       }
 
+    }
+
+    > .astral-profile-container {
+      margin: 0 15px;
+      width: calc(100% - 30px);
+
+      > .card {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        height: 140px;
+        width: 140px;
+        margin: 15px 20px;
+        box-shadow: 0 4px 8px 0 rgb(16 25 40 / 10%);
+        text-align: center;
+        overflow: auto;
+
+        > p {
+          margin: 5px 0;
+          width: fit-content;
+          font-size: 14px;
+          color: black;
+          &:first-child {
+            position: absolute;
+            top: 5px;
+          }
+          &:last-child {
+            color: white;
+          }
+        }
+      }
+
+      > .cyan {
+        background-color: #AAE5E3;
+      }
+      > .blue {
+        background-color: #AAC7E2;
+      }
+      > .purple {
+        background-color: #AAAAE2;
+      }
+      > .mauve {
+        background-color: #C2AAE2;
+      }
     }
 
   }
