@@ -7,6 +7,7 @@ body {
   height: 100%;
   background-image: url("../../resources/images/gradient4.svg");
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: "Microsoft Yi Baiti", "Verdana", sans-serif;
   color: white;
   margin: 0;
