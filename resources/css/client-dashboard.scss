@@ -1,0 +1,43 @@
+@use "commons";
+
+body {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  font-family: "Microsoft Yi Baiti", "Verdana", sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+}
+
+#navbar {
+  height: 60px;
+  width: 100%;
+  padding-top: 10px;
+  background-image: url("../../resources/images/gradient3.png");
+  > a > .button {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 22px;
+    @extend %base-transition-duration;
+    &:hover {
+      @extend %base-transition-duration;
+      transform: scale(1.1);
+    }
+    &.left {
+      float: left;
+      margin-left: 40px;
+    }
+
+    &.right {
+      float: right;
+      margin-right: 80px;
+    }
+
+  }
+}

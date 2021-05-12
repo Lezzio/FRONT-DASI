@@ -20,8 +20,8 @@ a {
 
 #navbar {
   height: 100px;
-  padding-top: 10px;
   width: 100%;
+  padding-top: 10px;
 }
 #navbar > a > .button {
   cursor: pointer;
