@@ -6,6 +6,7 @@ let switchSelection = "Client"
 $(document).ready(function () {
     $("#switch-selector-client").click(switchClient)
     $("#switch-selector-employee").click(switchEmployee)
+    $("#login-button").click(loginButton)
 });
 function switchClient() {
     const target = $("#switch-indicator")
@@ -19,4 +20,10 @@ function switchEmployee() {
     switchSelection = "Employee"
     target.addClass("right");
     target.removeClass("left");
+}
+
+function loginButton() {
+    const mail = $("#mail").val()
+    const password = $("#password").val()
+    window.alert("WORKING")
 }
