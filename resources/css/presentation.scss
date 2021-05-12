@@ -51,18 +51,20 @@ a {
   padding-top: 120px;
   margin: auto;
 
-  > .login-title {
+  > .presentation-title {
     width: fit-content;
-    font-size: 38px;
+    font-size: 46px;
     margin: auto;
     padding-top: 20px;
     padding-bottom: 20px;
   }
 
-  > .login-form {
+  > .presentation-content {
+    color: black;
     width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 100px auto 20px auto;
+    text-align: center;
+    font-size: 26px;
 
     > .large-input {
       text-align: center;
@@ -78,63 +80,18 @@ a {
 
   }
 
-  > .switch-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 30px auto 20px auto;
-
-    > .switch-selector {
-      cursor: pointer;
-      font-size: 18px;
-      @extend %base-transition-duration;
-
-      &:hover {
-        @extend %base-transition-duration;
-        color: #1967bf
-      }
-    }
-
-    > .switch-groove {
-      width: 60px;
-      height: 1em;
-      background-color: white;
-      border-radius: 10px;
-      margin: 0 8px;
-
-      > #switch-indicator {
-        margin-top: 0.5px;
-        margin-left: 1px;
-        margin-right: 1px;
-        width: 44%;
-        height: 90%;
-        border-radius: 10px;
-        background-color: #AE76FF;
-
-        &.left {
-          float: left;
-        }
-
-        &.right {
-          float: right;
-        }
-      }
-
-    }
-  }
-
-  > #login-button {
+  > #presentation-button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 260px;
     height: 34px;
     margin: 50px auto;
+    padding: 10px;
     font-size: 14px;
     text-align: center;
-    background-color: #AE76FF;
-    border-radius: 20px;
+    background-color: #33AFA6;
+    border-radius: 32px;
     cursor: pointer;
 
     @extend %base-transition-duration;
@@ -145,7 +102,7 @@ a {
     }
   }
 
-  > .login-footer {
+  > .presentation-footer {
     width: fit-content;
     margin: auto;
 
@@ -160,6 +117,10 @@ a {
         text-decoration: underline;
       }
     }
+  }
+
+  .medium-showcase {
+
   }
 
 }

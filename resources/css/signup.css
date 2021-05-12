@@ -1,11 +1,11 @@
-#navbar > a > .button, #navbar > a > .button:hover, #middle-container > .signup-button, #middle-container > .signup-button:hover, #middle-container > .signup-footer > span, #middle-container > .signup-footer > span:hover {
+#navbar > a > .button, #navbar > a > .button:hover, #middle-container > #signup-button, #middle-container > #signup-button:hover, #middle-container > .signup-footer > span, #middle-container > .signup-footer > span:hover {
   transition-duration: 0.3s;
 }
 
 body {
   width: 100%;
   height: 100%;
-  background-image: url("../../resources/images/gradient1.png");
+  background-image: url("../../resources/images/gradient2.png");
   background-size: cover;
   background-position: center;
   font-family: "Microsoft Yi Baiti", "Verdana", sans-serif;
@@ -94,7 +94,7 @@ a {
 #middle-container > .signup-form > div > .medium-input.center {
   margin: auto;
 }
-#middle-container > .signup-button {
+#middle-container > #signup-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,7 +107,7 @@ a {
   border-radius: 20px;
   cursor: pointer;
 }
-#middle-container > .signup-button:hover {
+#middle-container > #signup-button:hover {
   transform: scale(1.04);
 }
 #middle-container > .signup-footer {
