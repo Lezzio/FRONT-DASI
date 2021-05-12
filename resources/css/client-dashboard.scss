@@ -20,15 +20,18 @@ a {
   width: 100%;
   padding-top: 10px;
   background-image: url("../../resources/images/gradient3.png");
+
   > a > .button {
     cursor: pointer;
     padding: 10px;
     font-size: 22px;
     @extend %base-transition-duration;
+
     &:hover {
       @extend %base-transition-duration;
       transform: scale(1.1);
     }
+
     &.left {
       float: left;
       margin-left: 40px;
@@ -43,10 +46,13 @@ a {
 }
 
 .main-content {
+  position: relative;
   width: 100%;
   height: calc(100% - 70px); //Minus navbar
 
-  .client-profile {
+  > .client-profile {
+    position: absolute;
+    left: 0;
     height: 100%;
     width: 400px;
     background-color: #F4F4F4;
@@ -115,9 +121,11 @@ a {
           &.left {
             float: left;
           }
+
           &.right {
             float: right;
           }
+
           &.center {
             margin: auto;
           }
@@ -150,12 +158,15 @@ a {
           width: fit-content;
           font-size: 14px;
           color: black;
+
           &:first-child {
             position: absolute;
             top: 5px;
           }
+
           &:last-child {
             color: white;
+            font-size: 16px;
           }
         }
       }
@@ -163,12 +174,15 @@ a {
       > .cyan {
         background-color: #AAE5E3;
       }
+
       > .blue {
         background-color: #AAC7E2;
       }
+
       > .purple {
         background-color: #AAAAE2;
       }
+
       > .mauve {
         background-color: #C2AAE2;
       }
@@ -176,7 +190,41 @@ a {
 
   }
 
-  .medium-pane {
+  > .medium-pane {
+    width: calc(100% - 400px);
+    height: 100%;
+    float: right;
+    background-color: white;
+    vertical-align: center;
+
+    > .title {
+      width: 100%;
+      text-align: center;
+      color: #333333;
+      font-size: 30px;
+    }
+
+    > .medium-container {
+      width: 100%;
+      height: calc(100% - 96px);
+
+      > .spirits {
+        background: #F7E1D7;
+        height: calc(100% / 3 - 5px);
+        border-bottom: white solid 5px;
+      }
+
+      > .cartomanciens {
+        background: #E0F2D7;
+        height: calc(100% / 3 - 5px);
+        border-bottom: white solid 5px;
+      }
+
+      .astrologers {
+        background: #D8EDEF;
+        height: calc(100% / 3);
+      }
+    }
 
   }
 
