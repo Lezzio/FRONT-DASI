@@ -1,12 +1,13 @@
-#navbar > a > .button, #navbar > a > .button:hover, #middle-container > .login-button, #middle-container > .login-button:hover, #middle-container > .login-footer > span, #middle-container > .login-footer > span:hover {
+#navbar > a > .button, #navbar > a > .button:hover, #middle-container > .signup-button, #middle-container > .signup-button:hover, #middle-container > .signup-footer > span, #middle-container > .signup-footer > span:hover {
   transition-duration: 0.3s;
 }
 
 body {
   width: 100%;
   height: 100%;
-  background-image: url("../../resources/images/gradient4.svg");
+  background-image: url("../../resources/images/gradient1.png");
   background-size: cover;
+  background-position: center;
   font-family: "Microsoft Yi Baiti", "Verdana", sans-serif;
   color: white;
   margin: 0;
@@ -45,25 +46,25 @@ a {
   padding-top: 60px;
   margin: auto;
 }
-#middle-container > .login-title {
+#middle-container > .signup-title {
   width: fit-content;
   font-size: 38px;
   margin: auto;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-#middle-container > .login-form {
+#middle-container > .signup-form {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
 }
-#middle-container > .login-form > div {
+#middle-container > .signup-form > div {
   width: 410px;
   height: 32px;
   box-sizing: border-box;
   margin: 20px;
 }
-#middle-container > .login-form > div > .large-input {
+#middle-container > .signup-form > div > .large-input {
   text-align: center;
   vertical-align: middle;
   display: block;
@@ -74,7 +75,7 @@ a {
   border: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
-#middle-container > .login-form > div > .medium-input {
+#middle-container > .signup-form > div > .medium-input {
   text-align: center;
   display: block;
   width: 180px;
@@ -84,16 +85,16 @@ a {
   border: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
-#middle-container > .login-form > div > .medium-input.left {
+#middle-container > .signup-form > div > .medium-input.left {
   float: left;
 }
-#middle-container > .login-form > div > .medium-input.right {
+#middle-container > .signup-form > div > .medium-input.right {
   float: right;
 }
-#middle-container > .login-form > div > .medium-input.center {
+#middle-container > .signup-form > div > .medium-input.center {
   margin: auto;
 }
-#middle-container > .login-button {
+#middle-container > .signup-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,19 +107,19 @@ a {
   border-radius: 20px;
   cursor: pointer;
 }
-#middle-container > .login-button:hover {
+#middle-container > .signup-button:hover {
   transform: scale(1.04);
 }
-#middle-container > .login-footer {
+#middle-container > .signup-footer {
   width: fit-content;
   margin: auto;
 }
-#middle-container > .login-footer > span {
+#middle-container > .signup-footer > span {
   cursor: pointer;
   font-weight: bold;
   color: #AE76FF;
 }
-#middle-container > .login-footer > span:hover {
+#middle-container > .signup-footer > span:hover {
   text-decoration: underline;
 }
 
