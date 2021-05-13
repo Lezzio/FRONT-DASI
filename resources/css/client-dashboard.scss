@@ -224,6 +224,55 @@ a {
         background: #D8EDEF;
         height: calc(100% / 3);
       }
+
+      > .tab {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        > .title-container {
+          display: flex;
+          width: 80px;
+          height: 100%;
+          align-items: center;
+
+          > .vertical-title {
+            color: black;
+            margin: 10px;
+            font-size: 26px;
+            writing-mode: tb-rl;
+            transform: rotate(-180deg);
+          }
+        }
+
+        > .medium-card {
+          height: 90%;
+          width: 220px;
+          background-color: #F4F4F4;
+          color: #333333;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+          > p {
+            margin: 0;
+          }
+          > .big {
+            font-size: 18px;
+          }
+          > .medium {
+            font-size: 16px;
+          }
+          > .small {
+            font-size: 14px;
+          }
+          > .center {
+            text-align: center;
+          }
+
+        }
+
+      }
+
+
     }
 
   }
