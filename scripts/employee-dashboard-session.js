@@ -1,6 +1,7 @@
 var employeeId = 2;
 var consultationId = 0;
 
+/*
 $(document).ready(function () {
     getActiveConsultation()
     $("#start-button").click(startbutton)
@@ -85,3 +86,4 @@ function startbutton() {
         })
 
 }
+ */

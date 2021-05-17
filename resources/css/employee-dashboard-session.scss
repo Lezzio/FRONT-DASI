@@ -244,11 +244,25 @@ p {
       margin: auto;
 
       > .inspi-category {
-        display: inline-block;
-        width: 240px;
+        display: inline-flex;
+        width: 380px;
+        height: fit-content;
         font-weight: bold;
         font-size: 18px;
         margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+
+        > .inspiration-message {
+          font-size: 14px;
+          font-weight: normal;
+          padding: 10px 15px;
+          color: black;
+          background: white;
+          border-radius: 20px;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        }
+
       }
 
     }
@@ -257,64 +271,71 @@ p {
 
 }
 
-.container {
-  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete-texture.png");
-  display: flex;
-  flex-wrap: wrap;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-}
-
-.rating {
-  display: flex;
-  width: 100%;
-  justify-content: center;
+.star-level {
+  font-size: 0;
+  white-space: nowrap;
+  display: inline-block;
+  /* width: 250px; remove this */
+  height: 50px;
   overflow: hidden;
-  flex-direction: row-reverse;
-  height: 150px;
+  position: relative;
+  background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+  background-size: contain;
+  transform: scale(0.5);
+}
+.star-level i {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  /* width: 20%; remove this */
+  z-index: 1;
+  background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+  background-size: contain;
+}
+.star-level input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  opacity: 0;
+  display: inline-block;
+  /* width: 20%; remove this */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
   position: relative;
 }
-
-.rating-0 {
-  filter: grayscale(100%);
+.star-level input:hover + i,
+.star-level input:checked + i {
+  opacity: 1;
 }
-
-.rating > input {
-  display: none;
+.star-level i ~ i {
+  width: 40%;
 }
-
-.rating > label {
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  margin-top: auto;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23e3e3e3' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 76%;
-  transition: .3s;
+.star-level i ~ i ~ i {
+  width: 60%;
 }
-
-.rating > input:checked ~ label,
-.rating > input:checked ~ label ~ label {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fcd93a' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+.star-level i ~ i ~ i ~ i {
+  width: 80%;
 }
-.rating > input:not(:checked) ~ label:hover,
-.rating > input:not(:checked) ~ label:hover ~ label {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23d8b11e' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
-}
-.feedback {
-  max-width: 360px;
-  background-color: #fff;
+.star-level i ~ i ~ i ~ i ~ i {
   width: 100%;
-  padding: 30px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  box-shadow: 0 4px 30px rgba(0,0,0,.05);
+}
+::after,
+::before {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: middle;
 }
 
+.star-level.star-5 {width: 250px;}
+.star-level.star-5 input,
+.star-level.star-5 i {width: 20%;}
+.star-level.star-5 i ~ i {width: 40%;}
+.star-level.star-5 i ~ i ~ i {width: 60%;}
+.star-level.star-5 i ~ i ~ i ~ i {width: 80%;}
+.star-level.star-5 i ~ i ~ i ~ i ~i {width: 100%;}
