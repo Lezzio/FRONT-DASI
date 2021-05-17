@@ -1,0 +1,221 @@
+#navbar > a > .button, #navbar > a > .button:hover {
+  transition-duration: 0.3s;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  font-family: "Microsoft Yi Baiti", "Verdana", sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+}
+
+#navbar {
+  height: 60px;
+  width: 100%;
+  padding-top: 10px;
+  background-image: url("../../resources/images/gradient3.png");
+}
+#navbar > a > .button {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 22px;
+}
+#navbar > a > .button:hover {
+  transform: scale(1.1);
+}
+#navbar > a > .button.left {
+  float: left;
+  margin-left: 40px;
+}
+#navbar > a > .button.right {
+  float: right;
+  margin-right: 80px;
+}
+
+.main-content {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 70px);
+}
+.main-content > .client-profile {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 400px;
+  background-color: #F4F4F4;
+}
+.main-content > .client-profile > .header {
+  height: 50px;
+  width: 100%;
+  font-family: "Bernard MT Condensed", sans-serif;
+  font-size: 24px;
+  background-image: url("../../resources/images/bandeauMP.svg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  line-height: 2em;
+  color: white;
+}
+.main-content > .client-profile > .profile-form {
+  width: 100%;
+}
+.main-content > .client-profile > .profile-form > label {
+  display: block;
+  color: black;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  height: 1em;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.main-content > .client-profile > .profile-form > div {
+  display: block;
+  height: fit-content;
+}
+.main-content > .client-profile > .profile-form > div.overflow-fix {
+  overflow: auto;
+}
+.main-content > .client-profile > .profile-form > div > .large-input {
+  text-align: center;
+  vertical-align: middle;
+  display: block;
+  width: 90%;
+  height: 1.2em;
+  padding: 5px;
+  font-size: 18px;
+  border: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  margin: 8px auto;
+  border-radius: 10px;
+}
+.main-content > .client-profile > .profile-form > div > .medium-input {
+  text-align: center;
+  display: block;
+  width: 170px;
+  height: 1.2em;
+  padding: 5px 0 5px 0;
+  font-size: 18px;
+  border: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  margin: 8px 15px;
+  border-radius: 10px;
+}
+.main-content > .client-profile > .profile-form > div > .medium-input.left {
+  float: left;
+}
+.main-content > .client-profile > .profile-form > div > .medium-input.right {
+  float: right;
+}
+.main-content > .client-profile > .profile-form > div > .medium-input.center {
+  margin: auto;
+}
+.main-content > .client-profile > .astral-profile-container {
+  margin: 0 15px;
+  width: calc(100% - 30px);
+}
+.main-content > .client-profile > .astral-profile-container > .card {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 140px;
+  width: 140px;
+  margin: 15px 20px;
+  box-shadow: 0 4px 8px 0 rgba(16, 25, 40, 0.1);
+  text-align: center;
+  overflow: auto;
+}
+.main-content > .client-profile > .astral-profile-container > .card > p {
+  margin: 5px 0;
+  width: fit-content;
+  font-size: 14px;
+  color: black;
+}
+.main-content > .client-profile > .astral-profile-container > .card > p:first-child {
+  position: absolute;
+  top: 5px;
+}
+.main-content > .client-profile > .astral-profile-container > .card > p:last-child {
+  color: white;
+  font-size: 16px;
+}
+.main-content > .client-profile > .astral-profile-container > .cyan {
+  background-color: #AAE5E3;
+}
+.main-content > .client-profile > .astral-profile-container > .blue {
+  background-color: #AAC7E2;
+}
+.main-content > .client-profile > .astral-profile-container > .purple {
+  background-color: #AAAAE2;
+}
+.main-content > .client-profile > .astral-profile-container > .mauve {
+  background-color: #C2AAE2;
+}
+.main-content > .history-pane {
+  width: calc(100% - 400px);
+  height: 100%;
+  float: right;
+  background-color: white;
+  vertical-align: center;
+}
+.main-content > .history-pane > .title {
+  width: 100%;
+  text-align: center;
+  color: #333333;
+  font-size: 30px;
+}
+.main-content > .history-pane > .column-titles-container {
+  display: flex;
+}
+.main-content > .history-pane > .column-titles-container > .column-title {
+  flex: 1;
+  color: #333333;
+  text-align: center;
+  font-size: 18px;
+}
+.main-content > .history-pane > .medium-container {
+  width: 100%;
+  height: calc(100% - 96px);
+}
+.main-content > .history-pane > .medium-container > .session-row {
+  width: 100%;
+  height: 40px;
+  background: #F7E1D7;
+}
+.main-content > .history-pane > .medium-container > .session-row {
+  width: 100%;
+  height: 40px;
+  background: #F7E1D7;
+}
+.main-content > .history-pane > .medium-container > .session-row {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+}
+.main-content > .history-pane > .medium-container > .session-row.orange {
+  background: #F7E1D7;
+}
+.main-content > .history-pane > .medium-container > .session-row.green {
+  background: #E0F2D7;
+}
+.main-content > .history-pane > .medium-container > .session-row.blue {
+  background: #D8EDEF;
+}
+.main-content > .history-pane > .medium-container > .session-row > .field {
+  flex: 1;
+  color: #333333;
+  text-align: center;
+}
+
+/*# sourceMappingURL=client-dashboard-history.css.map */

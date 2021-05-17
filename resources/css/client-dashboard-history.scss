@@ -1,0 +1,262 @@
+@use "commons";
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  font-family: "Microsoft Yi Baiti", "Verdana", sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+}
+
+#navbar {
+  height: 60px;
+  width: 100%;
+  padding-top: 10px;
+  background-image: url("../../resources/images/gradient3.png");
+
+  > a > .button {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 22px;
+    @extend %base-transition-duration;
+
+    &:hover {
+      @extend %base-transition-duration;
+      transform: scale(1.1);
+    }
+
+    &.left {
+      float: left;
+      margin-left: 40px;
+    }
+
+    &.right {
+      float: right;
+      margin-right: 80px;
+    }
+
+  }
+}
+
+.main-content {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 70px); //Minus navbar
+
+  > .client-profile {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 400px;
+    background-color: #F4F4F4;
+
+    > .header {
+      height: 50px;
+      width: 100%;
+      font-family: "Bernard MT Condensed", sans-serif;
+      font-size: 24px;
+      background-image: url("../../resources/images/bandeauMP.svg");
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      line-height: 2em;
+      color: white;
+    }
+
+    > .profile-form {
+      width: 100%;
+
+      > label {
+        display: block;
+        color: black;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+        height: 1em;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      > div {
+        display: block;
+        height: fit-content;
+
+        &.overflow-fix {
+          overflow: auto; //Used to fix the height fitting with float nodes
+        }
+
+        > .large-input {
+          text-align: center;
+          vertical-align: middle;
+          display: block;
+          width: 90%;
+          height: 1.2em;
+          padding: 5px;
+          font-size: 18px;
+          border: 0;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+          margin: 8px auto;
+          border-radius: 10px;
+        }
+
+        > .medium-input {
+          text-align: center;
+          display: block;
+          width: 170px;
+          height: 1.2em;
+          padding: 5px 0 5px 0;
+          font-size: 18px;
+          border: 0;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+          margin: 8px 15px;
+          border-radius: 10px;
+
+          &.left {
+            float: left;
+          }
+
+          &.right {
+            float: right;
+          }
+
+          &.center {
+            margin: auto;
+          }
+
+        }
+
+      }
+
+    }
+
+    > .astral-profile-container {
+      margin: 0 15px;
+      width: calc(100% - 30px);
+
+      > .card {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        height: 140px;
+        width: 140px;
+        margin: 15px 20px;
+        box-shadow: 0 4px 8px 0 rgb(16 25 40 / 10%);
+        text-align: center;
+        overflow: auto;
+
+        > p {
+          margin: 5px 0;
+          width: fit-content;
+          font-size: 14px;
+          color: black;
+
+          &:first-child {
+            position: absolute;
+            top: 5px;
+          }
+
+          &:last-child {
+            color: white;
+            font-size: 16px;
+          }
+        }
+      }
+
+      > .cyan {
+        background-color: #AAE5E3;
+      }
+
+      > .blue {
+        background-color: #AAC7E2;
+      }
+
+      > .purple {
+        background-color: #AAAAE2;
+      }
+
+      > .mauve {
+        background-color: #C2AAE2;
+      }
+    }
+
+  }
+
+  > .history-pane {
+    width: calc(100% - 400px);
+    height: 100%;
+    float: right;
+    background-color: white;
+    vertical-align: center;
+
+    > .title {
+      width: 100%;
+      text-align: center;
+      color: #333333;
+      font-size: 30px;
+    }
+
+    > .column-titles-container {
+      display: flex;
+
+      > .column-title {
+        flex: 1;
+        color: #333333;
+        text-align: center;
+        font-size: 18px;
+      }
+
+    }
+
+    > .medium-container {
+      width: 100%;
+      height: calc(100% - 96px);
+
+      > .session-row {
+        width: 100%;
+        height: 40px;
+        background: #F7E1D7;
+      }
+      > .session-row {
+        width: 100%;
+        height: 40px;
+        background: #F7E1D7;
+      }
+      > .session-row {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        margin: 10px 0;
+
+        &.orange {
+          background: #F7E1D7;
+        }
+        &.green {
+          background: #E0F2D7;
+        }
+        &.blue {
+          background: #D8EDEF;
+        }
+
+        > .field {
+          flex: 1;
+          color: #333333;
+          text-align: center;
+        }
+
+      }
+
+
+    }
+
+  }
+
+}

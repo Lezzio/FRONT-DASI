@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Predict'IF</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="resources/css/client-dashboard-history.css">
+    <link href="//db.onlinewebfonts.com/c/eceba41a00b4b94ea2965371c8dda96c?family=Bernard+MT+Condensed" rel="stylesheet" type="text/css"/>
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div id="navbar">
+    <a href="index.html">
+        <div class="button left">ACCUEIL</div>
+    </a>
+    <a href="index.html">
+        <div class="button left">MES MÉDIUMS</div>
+    </a>
+    <a href="index.html">
+        <div class="button left">MES SÉANCES</div>
+    </a>
+    <a href="login.html">
+        <div class="button right">DÉCONNEXION</div>
+    </a>
+</div>
+
+<div class="main-content">
+    <div class="client-profile">
+        <div class="header">
+            MON PROFIL
+        </div>
+        <div class="profile-form">
+
+            <!-- Identity -->
+            <label for="first-name">IDENTITÉ</label>
+            <div class="overflow-fix">
+                <input id="first-name" type="text" class="medium-input left" placeholder="Prénom">
+                <input id="last-name" type="text" class="medium-input right" placeholder="Nom">
+            </div>
+
+            <!-- Birthdate -->
+            <label for="birthdate">DATE DE NAISSANCE</label>
+            <div>
+                <input id="birthdate" type="date" class="medium-input center" placeholder="Date de naissance">
+            </div>
+
+            <!-- Addresse -->
+            <label for="address">ADRESSE</label>
+            <div id="address-container">
+                <input id="address" type="text" class="large-input" placeholder="Adresse">
+                <input id="postal-code" type="text" class="medium-input" placeholder="Code postal">
+                <input id="city" type="text" class="medium-input" placeholder="Ville">
+            </div>
+
+            <!-- Contact -->
+            <label for="contact-mail">CONTACTS</label>
+            <div>
+                <input id="contact-mail" type="text" class="large-input" placeholder="Mail">
+                <input id="contact-phone" type="text" class="large-input" placeholder="Téléphone">
+            </div>
+
+        </div>
+        <div class="astral-profile-container">
+            <div class="card cyan">
+                <p>ZODIAC</p>
+                <p id="zodiac">Verseau</p>
+            </div>
+            <div class="card blue">
+                <p>ASTRO CHINOIS</p>
+                <p id="astro">Cochon</p>
+            </div>
+        </div>
+        <div class="astral-profile-container">
+            <div class="card purple">
+                <p>ANIMAL</p>
+                <p id="animal">Marmotte</p>
+            </div>
+            <div class="card mauve">
+                <p>COULEUR
+                    <br/>
+                    PORTE-BONHEUR
+                </p>
+                <p id="color">Bleu</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="history-pane">
+        <p class="title">MES MEDIUMS</p>
+        <div class="column-titles-container">
+            <div class="column-title">
+                DATE
+            </div>
+            <div class="column-title">
+                MEDIUM CONSULTÉ
+            </div>
+            <div class="column-title">
+                DURÉE
+            </div>
+        </div>
+        <div class="medium-container">
+            <div class="session-row orange">
+                <p class="field">21 juin 2021</p>
+                <p class="field">Irma</p>
+                <p class="field">42 minutes</p>
+            </div>
+            <div class="session-row green">
+                <p class="field">21 juin 2021</p>
+                <p class="field">Irma</p>
+                <p class="field">42 minutes</p>
+            </div>
+            <div class="session-row blue">
+                <p class="field">21 juin 2021</p>
+                <p class="field">Irma</p>
+                <p class="field">42 minutes</p>
+            </div>
+            <div class="session-row orange">
+                <p class="field">21 juin 2021</p>
+                <p class="field">Irma</p>
+                <p class="field">42 minutes</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
