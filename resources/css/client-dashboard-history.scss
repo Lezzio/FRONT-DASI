@@ -3,8 +3,6 @@
 body {
   width: 100%;
   height: 100vh;
-  background-size: cover;
-  background-position: center;
   font-family: "Microsoft Yi Baiti", "Verdana", sans-serif;
   color: white;
   margin: 0;
@@ -192,7 +190,7 @@ a {
 
   > .history-pane {
     width: calc(100% - 400px);
-    height: 100%;
+    height: fit-content;
     float: right;
     background-color: white;
     vertical-align: center;

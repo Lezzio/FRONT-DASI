@@ -1,0 +1,109 @@
+@use "commons";
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../resources/images/gradient4.png");
+  background-size: cover;
+  background-position: center;
+  font-family: "Microsoft Yi Baiti", "Verdana", sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+}
+
+#navbar {
+  height: 60px;
+  width: 100%;
+  padding-top: 10px;
+
+  > a > .button {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 22px;
+    @extend %base-transition-duration;
+
+    &:hover {
+      @extend %base-transition-duration;
+      transform: scale(1.1);
+    }
+
+    &.left {
+      float: left;
+      margin-left: 40px;
+    }
+
+    &.right {
+      float: right;
+      margin-right: 80px;
+    }
+
+  }
+}
+
+.main-content {
+  position: relative;
+  width: 100%;
+
+  > #employee-name {
+    font-size: 34px;
+    width: fit-content;
+    margin: auto;
+  }
+
+  > #employee-mail {
+    font-size: 26px;
+    width: fit-content;
+    margin: auto;
+  }
+
+  > .row-container {
+
+    width: fit-content;
+    margin: 20px auto;
+
+    > .center-box {
+      display: inline-block;
+      vertical-align: top;
+      background: #78F2FF;
+      width: 300px;
+      height: 260px;
+      > p {
+        text-align: center;
+        font-size: 20px;
+        opacity: 0.9;
+      }
+      > ul {
+        list-style: none;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+
+    > .gray-box {
+      display: inline-block;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      background: #E2E2E2;
+      width: 400px;
+      height: 260px;
+      margin: 0 10px;
+    }
+
+  }
+
+  > .session-block {
+    display: flex;
+    background: #AE76FF;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    width: 300px;
+    height: 260px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
