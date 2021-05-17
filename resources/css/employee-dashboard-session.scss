@@ -16,6 +16,10 @@ a {
   color: white;
 }
 
+p {
+  margin: 0;
+}
+
 .background-opacity {
   position: fixed;
   width: 100%;
@@ -54,6 +58,23 @@ a {
   }
 }
 
+.section-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.paragraph-title {
+  font-size: 17px;
+}
+
+.left-title {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
 .main-content {
   position: relative;
   width: 100%;
@@ -82,24 +103,131 @@ a {
   }
 
   > .medium-box {
+    position: relative;
     width: 80%;
-    height: 200px;
+    height: 240px;
     background: #6C2FCC;
-    margin: 40px auto 24px auto;
+    margin: 80px auto 24px auto;
+    box-sizing: border-box;
+
+    > .medium-info-container {
+      width: fit-content;
+      padding-top: 15px;
+      margin: auto;
+      text-align: center;
+      font-size: 14px;
+    }
+
   }
 
   > .client-box {
+    position: relative;
     width: 80%;
-    height: 200px;
+    height: 240px;
     background: #33AFA6;
     margin: 24px auto;
+
+    > .client-info-container {
+      width: fit-content;
+      margin: auto;
+      font-size: 15px;
+
+      > div {
+        display: inline-block;
+        vertical-align: top;
+        width: 220px;
+        text-align: center;
+        margin: 0 40px;
+      }
+
+      > .client-identity {
+        padding-top: 50px;
+      }
+      > .client-astro {
+        padding-top: 20px;
+
+        > .astral-profile-container {
+
+          > .astral-profile-row {
+            width: 200px;
+            margin: 5px auto;
+
+            > .card {
+              position: relative;
+              display: inline-flex;
+              vertical-align: top;
+              align-items: center;
+              justify-content: center;
+              box-sizing: border-box;
+              height: 90px;
+              width: 90px;
+              box-shadow: 0 4px 8px 0 rgb(16 25 40 / 10%);
+              text-align: center;
+              font-size: 8px;
+
+              > p {
+                width: fit-content;
+                color: black;
+
+                &:first-child {
+                  position: absolute;
+                  top: 5px;
+                }
+                &:last-child {
+                  color: white;
+                }
+              }
+            }
+
+            > .cyan {
+              background-color: #AAE5E3;
+            }
+
+            > .blue {
+              background-color: #AAC7E2;
+            }
+
+            > .purple {
+              background-color: #AAAAE2;
+            }
+
+            > .mauve {
+              background-color: #C2AAE2;
+            }
+          }
+        }
+
+      }
+      > .client-contact {
+        padding-top: 50px;
+
+      }
+    }
+
   }
 
   > .history-box {
+    display: flex;
     width: 80%;
     height: 60px;
     background: #33AFA6;
     margin: 14px auto;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+
+    > .history-date {
+      width: 260px;
+      font-size: 17px;
+    }
+    > .history-medium {
+      width: 300px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    > .history-commentary {
+      flex: 1;
+    }
   }
 
   > .inspiration-container {
@@ -109,6 +237,84 @@ a {
     background: #843434;
     height: 180px;
     width: 100%;
+
+    > .categories {
+      width: fit-content;
+      height: 100%;
+      margin: auto;
+
+      > .inspi-category {
+        display: inline-block;
+        width: 240px;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 20px;
+      }
+
+    }
+
   }
 
 }
+
+.container {
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete-texture.png");
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.rating {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: row-reverse;
+  height: 150px;
+  position: relative;
+}
+
+.rating-0 {
+  filter: grayscale(100%);
+}
+
+.rating > input {
+  display: none;
+}
+
+.rating > label {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin-top: auto;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23e3e3e3' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 76%;
+  transition: .3s;
+}
+
+.rating > input:checked ~ label,
+.rating > input:checked ~ label ~ label {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fcd93a' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+}
+.rating > input:not(:checked) ~ label:hover,
+.rating > input:not(:checked) ~ label:hover ~ label {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23d8b11e' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+}
+.feedback {
+  max-width: 360px;
+  background-color: #fff;
+  width: 100%;
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  box-shadow: 0 4px 30px rgba(0,0,0,.05);
+}
+
