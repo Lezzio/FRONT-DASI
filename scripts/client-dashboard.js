@@ -7,7 +7,7 @@ $(document).ready(function () {
 function getInfos() {
     // Appel AJAX
     $.ajax({
-        url: './ActionServlet',
+        url: 'http://localhost:8080/DASI/ActionServlet',
         method: 'POST',
         data: {
             todo: 'getClient',

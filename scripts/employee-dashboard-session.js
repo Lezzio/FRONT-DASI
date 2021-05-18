@@ -10,7 +10,7 @@ $(document).ready(function () {
 function getActiveConsultation(){
     // Appel AJAX
     $.ajax({
-        url: './ActionServlet',
+        url: 'http://localhost:8080/DASI/ActionServlet',
         method: 'POST',
         data: {
             todo: 'fetchActiveConsultation',
@@ -42,13 +42,13 @@ function getActiveMedium(consultation){
         $('#medium-description').html(consultation.medium.descripion)
         // TODO : afficher le medium dans le bandeau pour mediums
     }else{
-        window.alert("Imposssible de trouver un médium pour la consultation")
+        window.alert("Impossible de trouver un médium pour la consultation")
     }
 }
 
 function getClientHistory(client){
     $.ajax({
-        url: './ActionServlet',
+        url: 'http://localhost:8080/DASI/ActionServlet',
         method: 'POST',
         data: {
             todo: 'getClientHistory',
@@ -127,7 +127,7 @@ function startbutton() {
     }
     // Appel AJAX
     $.ajax({
-        url: './ActionServlet',
+        url: 'http://localhost:8080/DASI/ActionServlet',
         method: 'POST',
         data: {
             todo: 'startConsultation',
