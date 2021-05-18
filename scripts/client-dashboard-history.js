@@ -48,7 +48,6 @@ function getInfos() {
                 $('#astro').text(chineeseSign);
 
                 console.log(document.getElementById('zodiac'))
-                window.alert("Informations fetched");
 
 
             } else {

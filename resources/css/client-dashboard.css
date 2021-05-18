@@ -214,21 +214,30 @@ a {
   background-color: #F4F4F4;
   color: #333333;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  margin: 0 10px;
 }
 .main-content > .medium-pane > .medium-container > .tab > .medium-card > p {
   margin: 0;
 }
 .main-content > .medium-pane > .medium-container > .tab > .medium-card > .big {
   font-size: 18px;
+  font-weight: 600;
 }
 .main-content > .medium-pane > .medium-container > .tab > .medium-card > .medium {
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 8px;
 }
 .main-content > .medium-pane > .medium-container > .tab > .medium-card > .small {
-  font-size: 14px;
+  font-size: 12px;
+  margin: 0 8px;
 }
 .main-content > .medium-pane > .medium-container > .tab > .medium-card > .center {
   text-align: center;
+}
+.main-content > .medium-pane > .medium-container > .tab > .medium-card:hover {
+  background: #AB55D8;
 }
 
 /*# sourceMappingURL=client-dashboard.css.map */

@@ -90,6 +90,7 @@ p {
   cursor: pointer;
   transform: translateY(-20px);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  z-index: 100;
 }
 .main-content > #start-button:hover {
   transform: scale(1.05);
