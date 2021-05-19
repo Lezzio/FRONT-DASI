@@ -81,26 +81,36 @@ p {
   height: calc(100% - 250px);
   overflow-y: scroll;
 
-  > #start-button {
+  > #state-button {
     display: flex;
     position: fixed;
-    left: calc(50% - 154px / 2);
     width: fit-content;
     padding: 12px 18px;
     font-size: 18px;
-    background: rgb(99, 187, 107);
     align-items: center;
     justify-content: center;
     border-radius: 18px;
     cursor: pointer;
     transform: translateY(-20px);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    z-index: 10;
+
     @extend %base-transition-duration;
     &:hover {
       @extend %base-transition-duration;
       transform: scale(1.05);
     }
-    z-index: 100;
+
+    &.start {
+      left: calc(50% - 154px / 2);
+      background: rgb(99, 187, 107);
+    }
+
+    &.end {
+      left: calc(50% - 180px / 2);
+      background: #C13636;
+    }
+
   }
 
   > .medium-box {

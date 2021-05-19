@@ -1,11 +1,9 @@
 //var employeeId = 2;
-var consultationId = 0;
 
+let consultationState = undefined
 
 $(document).ready(function () {
     displayActiveConsultation()
-    $("#start-button").click(startButton)
-    $("").click(startButton)
 });
 
 function displayActiveConsultation() {
@@ -23,8 +21,15 @@ function displayActiveConsultation() {
             if (response !== null) {
                 displayActiveMedium(response.medium)
                 displayActiveClient(response.client)
-                console.log("Medium" + response.medium)
+                console.log("Startdate = " + response.startDate)
+                if(response.startDate !== null && response.startDate !== undefined) {
+                    console.log("Got here = " + response.startDate)
+                    consultationState = "live"
+                } else {
+                    consultationState = "pending"
+                }
                 window.alert("Consultation trouvée");
+                updateStateButton()
             } else {
                 window.alert("Impossible de trouver une consultation");
                 $('#notification').html("Erreur de consultation"); // Message pour le paragraphe de notification
@@ -121,35 +126,71 @@ function getClientHistory(clientId) {
 
 function startButton() {
     console.log("clic sur le bouton commencement"); // LOG dans Console Javascript
-    $('#notification').html("Commencer..."); // Message pour le paragraphe de notification
-    if (consultationId === 0) {
-        window.alert("No id for this consultation thus you cannot start it")
-        return
-    }
     // Appel AJAX
     $.ajax({
         url: 'http://localhost:8080/DASI/ActionServlet',
         method: 'POST',
         data: {
-            todo: 'startConsultation',
-            consultationId: consultationId
+            todo: 'startConsultation'
         },
         dataType: 'json'
     })
         .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
             console.log('Response', response); // LOG dans Console Javascript
-            if (response.start) {
-                window.alert("Debut de la consultation");
-
+            if (response.status === "ok") {
+                consultationState = "live"
+                updateStateButton()
             } else {
                 window.alert("Impossible de débuter la consultation");
-                $('#notification').html("Erreur de consultation"); // Message pour le paragraphe de notification
             }
-
         })
         .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
             console.log('Error', error); // LOG dans Console Javascript
             alert("Erreur lors de l'appel AJAX");
         })
 
+}
+
+function endButton() {
+    console.log("clic sur le bouton fin"); // LOG dans Console Javascript
+    // Appel AJAX
+    $.ajax({
+        url: 'http://localhost:8080/DASI/ActionServlet',
+        method: 'POST',
+        data: {
+            todo: 'endConsultation'
+        },
+        dataType: 'json'
+    })
+        .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            console.log('Response', response); // LOG dans Console Javascript
+            if (response.status === "ok") {
+                updateStateButton()
+                window.location.href = './employee-dashboard.html'
+            } else {
+                window.alert("Impossible de terminer la consultation");
+            }
+        })
+        .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+            console.log('Error', error); // LOG dans Console Javascript
+            alert("Erreur lors de l'appel AJAX");
+        })
+
+}
+
+function updateStateButton() {
+    console.log("Consultation state = " + consultationState);
+    if(consultationState === "pending") {
+        $("#state-button")
+            .click(startButton)
+            .text("COMMENCER")
+            .addClass("start")
+            .removeClass("end")
+    } else if(consultationState === "live") {
+        $("#state-button")
+            .click(endButton)
+            .text("FIN DE SÉANCE")
+            .addClass("end")
+            .removeClass("start")
+    }
 }
