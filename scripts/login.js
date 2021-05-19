@@ -45,14 +45,14 @@ function loginButton() {
         dataType: 'json'
     })
         .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
-            console.log('Response',response); // LOG dans Console Javascript
+            console.log('Response', response); // LOG dans Console Javascript
             if (response.connexion) {
                 if(response.userType === "employee"){
                     console.log("Employee");
                     window.alert("Login successful");
                     document.location.href = "./employee-dashboard.html";
                     $('#notification').html("Connexion Employee OK : " + id + " " + firstName + " " + lastName + " " + mail);  // Message pour le paragraphe de notification
-                }else if (response.userType === "client"){
+                } else if (response.userType === "client"){
                     console.log("Client");
                     window.alert("Login successful");
                     document.location.href = "./client-dashboard.html"
