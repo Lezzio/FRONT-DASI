@@ -21,8 +21,8 @@ function displayActiveConsultation() {
         .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
             console.log('Response', response); // LOG dans Console Javascript
             if (response !== null) {
-                displayActiveMedium(response)
-                displayActiveClient(response)
+                displayActiveMedium(response.medium)
+                displayActiveClient(response.client)
                 console.log("Medium" + response.medium)
                 window.alert("Consultation trouvée");
             } else {
@@ -37,24 +37,21 @@ function displayActiveConsultation() {
         })
 }
 
-function displayActiveMedium(consultation) {
-    console.log(consultation.medium)
-    let medium = consultation.medium
-
+function displayActiveMedium(medium) {
     let content = ''
-    if(medium.support !== undefined) {
+    if (medium.support !== undefined) {
         content += `
         <p class="paragraph-title">Utilise</p>
         <p>${medium.support}</p>
         `
     }
-    if(medium.formation !== undefined) {
+    if (medium.formation !== undefined) {
         content += `
         <p class="paragraph-title">Formation</p>
         <p>${medium.formation}</p>
         `
     }
-    if(medium.promotion !== undefined) {
+    if (medium.promotion !== undefined) {
         content += `
         <p class="paragraph-title">Promotion</p>
         <p>${medium.promotion}</p>
@@ -68,41 +65,20 @@ function displayActiveMedium(consultation) {
     `)
 }
 
-function displayActiveClient(consultation) {
-    if (consultation.client !== "null") {
-        var lastName = consultation.client.lastName;
-        var firstName = consultation.client.firstName;
-        var mail = consultation.client.mail;
-        var birthDate = consultation.client.birthDate;
-        var address = consultation.client.address;
-        var zipCode = consultation.client.zipCode;
-        var phone = consultation.client.phone;
-        var city = consultation.client.city;
-        $('#client-birthdate').text(birthDate);
-        $('#client-address').text(address);
-        $('#client-city').text(zipCode + " " + city);
-        $('#client-phone').text(phone);
-        $('#client-mail').text(mail);
-        $('#client-name').text(firstName + " " + lastName);
+function displayActiveClient(client) {
+    $('#client-birthdate').text(client.birthDate);
+    $('#client-address').text(client.address);
+    $('#client-city').text(client.zipCode + " " + client.city);
+    $('#client-phone').text(client.phone);
+    $('#client-mail').text(client.mail);
+    $('#client-name').text(client.firstName + " " + client.lastName);
 
-
-        //Fill astral profile
-        var astralProfile = consultation.client.astralProfile;
-        var chineeseSign = astralProfile.chineeseSign;
-        var color = astralProfile.color;
-        var totem = astralProfile.totemAnimal;
-        var zodiac = astralProfile.zodiacSign;
-
-        $('#zodiac').text(zodiac);
-        $('#animal').text(totem);
-        $('#color').text(color);
-        $('#astro').text(chineeseSign);
-
-        getClientHistory(consultation.client.id)
-
-    } else {
-        window.alert("Imposssible de trouver un client pour la consultation")
-    }
+    //Fill astral profile
+    var astralProfile = client.astralProfile;
+    $('#zodiac').text(astralProfile.zodiacSign);
+    $('#animal').text(astralProfile.totemAnimal);
+    $('#color').text(astralProfile.color);
+    $('#astro').text(astralProfile.chineeseSign);
 }
 
 function getClientHistory(clientId) {
