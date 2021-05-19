@@ -15,43 +15,27 @@ function displayInfos() {
         url: 'http://localhost:8080/DASI/ActionServlet',
         method: 'POST',
         data: {
-            todo: 'getClient',
-            //id: clientId
+            todo: 'getClient'
         },
         dataType: 'json'
     })
         .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
             console.log('Response', response); // LOG dans Console Javascript
             if (response.client !== "null") {
-                console.log(response.client)
-                var lastName = response.client.lastName;
-                var firstName = response.client.firstName;
-                var mail = response.client.mail;
-                var birthDate = response.client.birthDate;
-                var address = response.client.address;
-                var zipCode = response.client.zipCode;
-                var phone = response.client.phone;
-                var city = response.client.city;
-                var astralProfile = response.client.astralProfile;
-                var chineeseSign = astralProfile.chineeseSign;
-                var color = astralProfile.color;
-                var totem = astralProfile.totemAnimal;
-                var zodiac = astralProfile.zodiacSign;
+                document.getElementById('first-name').setAttribute('value', response.firstName);
+                document.getElementById('last-name').setAttribute('value', response.lastName);
+                document.getElementById('birthdate').setAttribute('value', response.birthDate);
+                document.getElementById('address').setAttribute('value', response.address);
+                document.getElementById('postal-code').setAttribute('value', response.zipCode);
+                document.getElementById('city').setAttribute('value', response.city);
+                document.getElementById('contact-phone').setAttribute('value', response.phone);
+                document.getElementById('contact-mail').setAttribute('value', response.mail);
 
-                document.getElementById('first-name').setAttribute('value', firstName);
-                document.getElementById('last-name').setAttribute('value', lastName);
-                document.getElementById('birthdate').setAttribute('value', birthDate);
-                document.getElementById('address').setAttribute('value', address);
-                document.getElementById('postal-code').setAttribute('value', zipCode);
-                document.getElementById('city').setAttribute('value', city);
-                document.getElementById('contact-phone').setAttribute('value', phone);
-                document.getElementById('contact-mail').setAttribute('value', mail);
-
-                $('#zodiac').text(zodiac);
-                $('#animal').text(totem);
-                $('#color').text(color);
-                $('#astro').text(chineeseSign);
-
+                var astralProfile = response.astralProfile;
+                $('#zodiac').text(astralProfile.zodiacSign);
+                $('#animal').text(astralProfile.totemAnimal);
+                $('#color').text(astralProfile.color);
+                $('#astro').text(astralProfile.chineeseSign);
             } else {
                 window.alert("Les informations n'ont pas pu être récupérées");
                 $('#notification').html("Erreur lors de la recherche des informations"); // Message pour le paragraphe de notification
