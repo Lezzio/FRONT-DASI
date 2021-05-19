@@ -1,9 +1,13 @@
-var clientId = 1;
+//var clientId = 1;
 
 $(document).ready(function () {
     displayInfos();
     displayMediums();
 });
+
+function getId() {
+
+}
 
 function displayInfos() {
     // Appel AJAX
@@ -12,13 +16,14 @@ function displayInfos() {
         method: 'POST',
         data: {
             todo: 'getClient',
-            id: clientId
+            //id: clientId
         },
         dataType: 'json'
     })
         .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
             console.log('Response', response); // LOG dans Console Javascript
-            if (response.client) {
+            if (response.client !== "null") {
+                console.log(response.client)
                 var lastName = response.client.lastName;
                 var firstName = response.client.firstName;
                 var mail = response.client.mail;

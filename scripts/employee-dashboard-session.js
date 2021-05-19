@@ -1,10 +1,11 @@
-var employeeId = 2;
+//var employeeId = 2;
 var consultationId = 0;
 
 
 $(document).ready(function () {
     getActiveConsultation()
     $("#start-button").click(startbutton)
+    $("").click(startbutton)
 });
 
 function getActiveConsultation(){
@@ -14,7 +15,7 @@ function getActiveConsultation(){
         method: 'POST',
         data: {
             todo: 'fetchActiveConsultation',
-            employeeId : employeeId
+            //employeeId : employeeId
         },
         dataType: 'json'
     })
@@ -39,8 +40,24 @@ function getActiveConsultation(){
 
 function getActiveMedium(consultation){
     if(consultation.medium){
-        $('#medium-description').html(consultation.medium.descripion)
-        // TODO : afficher le medium dans le bandeau pour mediums
+        let medium = consultation.medium
+        $('.section-title').html(medium.name)
+        $('#medium-description').html(medium.descripion)
+        if(medium.formation){
+            $('.main-content').append(
+                '<p class="paragraph-title">' + Formation + '</p>' +
+                '<p>' + medium.formation + '</p>' +
+                '<br/>' +
+                '<p class="paragraph-title">' + Promotion + '</p>' +
+                '<p>' + medium.promotion + '</p>'
+            )
+        }else if(medium.support){
+            $('.main-content').append(
+                '<p class="paragraph-title">' + Support + '</p>' +
+                '<p>' + medium.support + '</p>' +
+                '<br/>'
+            )
+        }
     }else{
         window.alert("Impossible de trouver un médium pour la consultation")
     }

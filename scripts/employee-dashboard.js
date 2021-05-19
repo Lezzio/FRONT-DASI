@@ -1,5 +1,5 @@
 
-var employeeId = 2;
+//var employeeId = 2;
 
 $(document).ready(function () {
     getInfos();
@@ -46,7 +46,7 @@ function getInfos() {
         method: 'POST',
         data: {
             todo: 'getEmployee',
-            id: employeeId
+            //id: employeeId
         },
         dataType: 'json'
     })

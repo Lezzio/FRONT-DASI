@@ -47,34 +47,19 @@ function loginButton() {
         .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
             console.log('Response',response); // LOG dans Console Javascript
             if (response.connexion) {
-                var id = null;
-                var lastName = null;
-                var firstName = null;
-                var mail = null;
-                if(response.employee){
+                if(response.userType === "employee"){
                     console.log("Employee");
-                    id = response.employee.id;
-                    lastName = response.employee.lastName;
-                    firstName = response.employee.firstName;
-                    mail = response.employee.mail;
                     window.alert("Login successful");
+                    document.location.href = "./employee-dashboard.html";
                     $('#notification').html("Connexion Employee OK : " + id + " " + firstName + " " + lastName + " " + mail);  // Message pour le paragraphe de notification
-                    // TODO: afficher les informations du client dans la notification
-                    // Exemple: Connexion de Ada Lovelace (ID 1)
-                }else if (response.client){
+                }else if (response.userType === "client"){
                     console.log("Client");
-                    id = response.client.id;
-                    lastName = response.client.lastName;
-                    firstName = response.client.firstName;
-                    mail = response.client.mail;
                     window.alert("Login successful");
+                    document.location.href = "./client-dashboard.html"
                     $('#notification').html("Connexion Client OK : " + id + " " + firstName + " " + lastName + " " + mail);  // Message pour le paragraphe de notification
-                    // TODO: afficher les informations du client dans la notification
-                    // Exemple: Connexion de Ada Lovelace (ID 1)
                 }else{
                     window.alert("Neither employee or client");
                 }
-
             }
             else {
                 window.alert("Wrong login or password");

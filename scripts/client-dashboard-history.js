@@ -1,4 +1,4 @@
-var clientId = 1;
+//var clientId = 1;
 
 $(document).ready(function () {
     getInfos();
@@ -11,7 +11,7 @@ function getInfos() {
         method: 'POST',
         data: {
             todo: 'getClient',
-            id: clientId
+            //id: clientId
         },
         dataType: 'json'
     })
