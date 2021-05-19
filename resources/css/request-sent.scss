@@ -13,6 +13,7 @@ body {
 
 a {
   color: white;
+  text-decoration: none;
 }
 
 #navbar {
@@ -113,7 +114,7 @@ a {
     }
   }
 
-  > .request-button {
+  > a > .request-button {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -75,7 +75,7 @@ function displayMediums() {
             console.log('Response', response); // LOG dans Console Javascript
             console.log("List = " + response)
             $.each(response, function (index, medium) {
-                switch(medium.type) {
+                switch (medium.type) {
                     case "spirite":
                         $("#tab1").append(
                             `<div id="${medium.id}" class="medium-card" onclick="handleMediumClick(this.id)" >
@@ -121,10 +121,33 @@ function displayMediums() {
 
 function handleMediumClick(id) {
     //First we ask the consultation in ajax
-    window.alert(id)
+    console.log("ClientID = " + clientId + " MediumId = " + id)
 
-    //Then we redirect to another page (sent or not available)
-    window.location.href = './request-sent.html'
+    $.ajax({
+        url: 'http://localhost:8080/DASI/ActionServlet',
+        method: 'POST',
+        data: {
+            todo: 'askAppointment',
+            client: clientId,
+            medium: id
+        },
+        dataType: 'json'
+    })
+        .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            console.log('Response', response); // LOG dans Console Javascript
 
-    window.location.href = './not-available.html'
+            //Then we redirect to another page (sent or not available)
+            if (response.status === "available") {
+                window.location.href = './request-sent.html'
+            } else {
+                window.location.href = './not-available.html'
+            }
+        })
+        .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+            console.log('Error', error); // LOG dans Console Javascript
+            alert("Erreur lors de l'appel AJAX");
+        })
+        .always(function () { // Fonction toujours appelée
+
+        });
 }

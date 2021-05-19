@@ -1,4 +1,4 @@
-#navbar > a > .button, #navbar > a > .button:hover, #middle-container > .switch-container > .switch-selector, #middle-container > .switch-container > .switch-selector:hover, #middle-container > .request-button, #middle-container > .request-button:hover {
+#navbar > a > .button, #navbar > a > .button:hover, #middle-container > .switch-container > .switch-selector, #middle-container > .switch-container > .switch-selector:hover, #middle-container > a > .request-button, #middle-container > a > .request-button:hover {
   transition-duration: 0.3s;
 }
 
@@ -15,6 +15,7 @@ body {
 
 a {
   color: white;
+  text-decoration: none;
 }
 
 #navbar {
@@ -99,7 +100,7 @@ a {
 #middle-container > .switch-container > .switch-groove > #switch-indicator.right {
   float: right;
 }
-#middle-container > .request-button {
+#middle-container > a > .request-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,7 +113,7 @@ a {
   border-radius: 20px;
   cursor: pointer;
 }
-#middle-container > .request-button:hover {
+#middle-container > a > .request-button:hover {
   transform: scale(1.04);
 }
 

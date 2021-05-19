@@ -272,8 +272,10 @@ a {
             text-align: center;
           }
 
+          @extend %base-transition-duration;
           &:hover {
             background: #AB55D8;
+            @extend %base-transition-duration;
           }
 
         }
