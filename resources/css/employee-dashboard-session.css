@@ -103,7 +103,7 @@ p {
   margin: 80px auto 24px auto;
   box-sizing: border-box;
 }
-.main-content > .medium-box > .medium-info-container {
+.main-content > .medium-box > #medium-info-container {
   width: fit-content;
   padding-top: 15px;
   margin: auto;
