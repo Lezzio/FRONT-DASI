@@ -94,6 +94,7 @@ a {
 }
 .main-content > .session-block {
   display: flex;
+  flex-direction: column;
   background: #AE76FF;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   width: 300px;
@@ -101,6 +102,13 @@ a {
   margin: auto;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.main-content > .session-block > p {
+  margin: 0;
+}
+.main-content > .session-block:hover {
+  background: #6C2FCC;
 }
 
 /*# sourceMappingURL=employee-dashboard.css.map */

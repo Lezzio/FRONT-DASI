@@ -3,6 +3,7 @@
 $(document).ready(function () {
     getInfos();
     getTopFive();
+    setSessionState();
 });
 
 function getTopFive() {
@@ -53,6 +54,33 @@ function getInfos() {
         .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
             $('#employee-name').text(response.firstName + " " + response.lastName);
             $('#employee-mail').text(response.mail);
+        })
+        .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+            console.log('Error', error); // LOG dans Console Javascript
+            alert("Erreur lors de l'appel AJAX");
+        })
+        .always(function () { // Fonction toujours appelée
+
+        });
+}
+
+function setSessionState() {
+    // Appel AJAX
+    $.ajax({
+        url: 'http://localhost:8080/DASI/ActionServlet',
+        method: 'POST',
+        data: {
+            todo: 'hasActiveConsultation'
+        },
+        dataType: 'json'
+    })
+        .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            console.log("Consultation active = " + response.hasActiveConsultation)
+            if(response.hasActiveConsultation) {
+                $('#session-state').text("Session en cours")
+            } else {
+                $('#session-state').text("Aucune session")
+            }
         })
         .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
             console.log('Error', error); // LOG dans Console Javascript

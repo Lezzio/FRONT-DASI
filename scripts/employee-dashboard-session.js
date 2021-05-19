@@ -8,7 +8,7 @@ $(document).ready(function () {
     $("").click(startbutton)
 });
 
-function getActiveConsultation(){
+function getActiveConsultation() {
     // Appel AJAX
     $.ajax({
         url: 'http://localhost:8080/DASI/ActionServlet',
@@ -19,31 +19,31 @@ function getActiveConsultation(){
         },
         dataType: 'json'
     })
-        .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
-            console.log('Response',response); // LOG dans Console Javascript
+        .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            console.log('Response', response); // LOG dans Console Javascript
             if (response.consultation) {
                 window.alert("Consultation Trouvée");
                 consultationId = response.consultation.id
                 getActiveClient(response.consultation)
                 getActiveMedium(response.consultation)
-            }else{
+            } else {
                 window.alert("Impossible de trouver une consultation");
                 $('#notification').html("Erreur de consultation"); // Message pour le paragraphe de notification
             }
 
         })
-        .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+        .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
             console.log('Error', error); // LOG dans Console Javascript
             alert("Erreur lors de l'appel AJAX");
         })
 }
 
-function getActiveMedium(consultation){
-    if(consultation.medium){
+function getActiveMedium(consultation) {
+    if (consultation.medium) {
         let medium = consultation.medium
         $('.section-title').html(medium.name)
         $('#medium-description').html(medium.descripion)
-        if(medium.formation){
+        if (medium.formation) {
             $('.main-content').append(
                 '<p class="paragraph-title">' + Formation + '</p>' +
                 '<p>' + medium.formation + '</p>' +
@@ -51,56 +51,56 @@ function getActiveMedium(consultation){
                 '<p class="paragraph-title">' + Promotion + '</p>' +
                 '<p>' + medium.promotion + '</p>'
             )
-        }else if(medium.support){
+        } else if (medium.support) {
             $('.main-content').append(
                 '<p class="paragraph-title">' + Support + '</p>' +
                 '<p>' + medium.support + '</p>' +
                 '<br/>'
             )
         }
-    }else{
+    } else {
         window.alert("Impossible de trouver un médium pour la consultation")
     }
 }
 
-function getClientHistory(client){
+function getClientHistory(clientId) {
     $.ajax({
         url: 'http://localhost:8080/DASI/ActionServlet',
         method: 'POST',
         data: {
             todo: 'getClientHistory',
-            Client : client
+            clientId: clientId
         },
         dataType: 'json'
     })
-        .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
-            console.log('Response',response); // LOG dans Console Javascript
+        .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            console.log('Response', response); // LOG dans Console Javascript
             if (response.history) {
                 window.alert("Historique trouvé");
-                $.each(response.history, function(index, element){
+                $.each(response.history, function (index, element) {
 
                     $('#main-content').append(
-                        '<div class="history-box">'+
-                            '<p class="history-date">' + element.endDate + '</p>' +
-                            '<p class="history-medium">' + element.mediumName + '</p>' +
-                            '<p class="history-commentary">' + element.commmentary + '</p>' +
+                        '<div class="history-box">' +
+                        '<p class="history-date">' + element.endDate + '</p>' +
+                        '<p class="history-medium">' + element.mediumName + '</p>' +
+                        '<p class="history-commentary">' + element.commmentary + '</p>' +
                         '</div>'
                     )
                 })
-            }else{
+            } else {
                 window.alert("Impossible de trouver une consultation");
                 $('#notification').html("Erreur de consultation"); // Message pour le paragraphe de notification
             }
 
         })
-        .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
-            console.log('Error',error); // LOG dans Console Javascript
+        .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+            console.log('Error', error); // LOG dans Console Javascript
             alert("Erreur lors de l'appel AJAX");
         })
 }
 
-function getActiveClient(consultation){
-    if(consultation.client){
+function getActiveClient(consultation) {
+    if (consultation.client) {
         var lastName = consultation.client.lastName;
         var firstName = consultation.client.firstName;
         var mail = consultation.client.mail;
@@ -129,16 +129,17 @@ function getActiveClient(consultation){
         $('#color').text(color);
         $('#astro').text(chineeseSign);
 
-        getClientHistory(consultation.client)
+        getClientHistory(consultation.client.id)
 
-    }else{
+    } else {
         window.alert("Imposssible de trouver un client pour la consultation")
     }
 }
+
 function startbutton() {
     console.log("clic sur le bouton commencement"); // LOG dans Console Javascript
     $('#notification').html("Commencer..."); // Message pour le paragraphe de notification
-    if (consultationId === 0){
+    if (consultationId === 0) {
         window.alert("No id for this consultation thus you cannot start it")
         return
     }
@@ -148,23 +149,23 @@ function startbutton() {
         method: 'POST',
         data: {
             todo: 'startConsultation',
-            consultationId : consultationId
+            consultationId: consultationId
         },
         dataType: 'json'
     })
-        .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
-            console.log('Response',response); // LOG dans Console Javascript
+        .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            console.log('Response', response); // LOG dans Console Javascript
             if (response.start) {
                 window.alert("Debut de la consultation");
 
-            }else{
+            } else {
                 window.alert("Impossible de débuter la consultation");
                 $('#notification').html("Erreur de consultation"); // Message pour le paragraphe de notification
             }
 
         })
-        .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
-            console.log('Error',error); // LOG dans Console Javascript
+        .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+            console.log('Error', error); // LOG dans Console Javascript
             alert("Erreur lors de l'appel AJAX");
         })
 
