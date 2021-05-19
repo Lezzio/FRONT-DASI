@@ -1,5 +1,7 @@
 //var employeeId = 2;
 
+let hasActiveConsultation = false;
+
 $(document).ready(function () {
     getInfos();
     getTopFive();
@@ -76,6 +78,7 @@ function setSessionState() {
     })
         .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
             console.log("Consultation active = " + response.hasActiveConsultation)
+            hasActiveConsultation = response.hasActiveConsultation
             if(response.hasActiveConsultation) {
                 $('#session-state').text("Session en cours")
             } else {
@@ -89,4 +92,10 @@ function setSessionState() {
         .always(function () { // Fonction toujours appelée
 
         });
+}
+
+function handleAccessSession() {
+    if(hasActiveConsultation) {
+        window.location.href = './employee-dashboard-session.html'
+    }
 }
