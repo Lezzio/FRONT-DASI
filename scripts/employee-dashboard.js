@@ -3,10 +3,16 @@
 let hasActiveConsultation = false;
 
 $(document).ready(function () {
-    getInfos();
-    setSessionState();
+    getInfos()
+    getTopFive()
+    setSessionState()
 });
+function getDistribByEmployeeChart(){
 
+}
+function getDistribByMediumChart(){
+
+}
 function getTopFive() {
     $.ajax({
         url: 'http://localhost:8080/DASI/ActionServlet',
@@ -22,11 +28,9 @@ function getTopFive() {
                 $('#listTopFive').empty();
                 $.each(response.listeMedium, function (index, medium) {
                     let rank = index + 1;
-                    $('#listTopFive').append(
-                        '<li>' +
-                        rank + " - " + medium.Nom +
-                        '</li>'
-                    )
+                    $('#listTopFive').append(`
+                        <li> ${rank} - ${medium.name} - ${medium.numberUniqueClients} clients </li>
+                    `)
                 })
 
                 window.alert("Top5 fetched");
@@ -41,7 +45,6 @@ function getTopFive() {
             alert("Erreur lors de l'appel AJAX");
         });
 }
-
 function getInfos() {
     // Appel AJAX
     $.ajax({
@@ -53,6 +56,7 @@ function getInfos() {
         dataType: 'json'
     })
         .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            console.log(response)
             $('#employee-name').text(response.firstName + " " + response.lastName);
             $('#employee-mail').text(response.mail);
         })

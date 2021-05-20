@@ -4,6 +4,8 @@ console.log("Hey!")
 let switchSelection = "client"
 
 $(document).ready(function () {
+
+    isConnected();
     $("#switch-selector-client").click(switchClient)
     $("#switch-selector-employee").click(switchEmployee)
     $("#login-button").click(loginButton)
@@ -21,7 +23,35 @@ function switchEmployee() {
     target.addClass("right");
     target.removeClass("left");
 }
-
+function isConnected(){
+    $.ajax({
+        url: './ActionServlet',
+        method: 'POST',
+        data: {
+            todo: 'isConnected'
+        },
+        dataType: 'json'
+    })
+        .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            console.log('Response',response); // LOG dans Console Javascript
+            if (response.isConnected) {
+                if(response.userType === "client"){
+                    document.location.href = "./client-dashboard.html"
+                } else if(response.userType === "employee"){
+                    document.location.href = "./employee-dashboard.html";
+                } else{
+                    window.alert("Neither employee or client")
+                }
+            }
+            else {
+                window.alert("User not connected")
+            }
+        })
+        .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+            console.log('Error',error); // LOG dans Console Javascript
+            alert("Erreur lors de l'appel AJAX");
+        })
+}
 function loginButton() {
     console.log("clic sur le bouton de connexion"); // LOG dans Console Javascript
     $('#notification').html("Connexion..."); // Message pour le paragraphe de notification
@@ -34,7 +64,7 @@ function loginButton() {
     console.log(champPassword);
     // Appel AJAX
     $.ajax({
-        url: 'http://localhost:8080/DASI/ActionServlet',
+        url: './ActionServlet',
         method: 'POST',
         data: {
             todo: 'signIn',
