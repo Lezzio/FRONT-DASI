@@ -5,10 +5,6 @@ $(document).ready(function () {
     displayMediums();
 });
 
-function getId() {
-
-}
-
 function displayInfos() {
     // Appel AJAX
     $.ajax({

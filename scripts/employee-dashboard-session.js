@@ -28,7 +28,7 @@ function displayActiveConsultation() {
                 } else {
                     consultationState = "pending"
                 }
-                window.alert("Consultation trouvée");
+                console.log("Consultation trouvée");
                 updateStateButton()
             } else {
                 window.alert("Impossible de trouver une consultation");

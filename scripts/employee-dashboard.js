@@ -4,7 +4,6 @@ let hasActiveConsultation = false;
 
 $(document).ready(function () {
     getInfos();
-    getTopFive();
     setSessionState();
 });
 
