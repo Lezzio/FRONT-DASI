@@ -81,16 +81,16 @@ function setSessionState() {
             console.log("Last consultation ended = " + response.lastConsultationEnded)
             hasActiveConsultation = response.hasActiveConsultation
             if(response.lastConsultationEnded) {
-                $('#commentary-holder').removeClass('hidden')
+                $('#commentary-container').removeClass('hidden')
                 $('#session-state-container').addClass('hidden')
             } else if(response.hasActiveConsultation) {
                 $('#session-state').text("Session en cours")
                 $('#session-state-container').removeClass('hidden')
-                $('#commentary-holder').addClass('hidden')
+                $('#commentary-container').addClass('hidden')
             } else {
                 $('#session-state').text("Aucune session")
                 $('#session-state-container').removeClass('hidden')
-                $('#commentary-holder').addClass('hidden')
+                $('#commentary-container').addClass('hidden')
             }
         })
         .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
