@@ -195,6 +195,6 @@ function updateStateButton() {
     }
 }
 
-function handlePrediction(value) {
-    console.log("Called prediction for " + value)
+function handlePrediction(name, value) {
+    console.log("Called prediction for " + name + " and " + value)
 }
