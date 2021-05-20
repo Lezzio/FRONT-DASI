@@ -71,17 +71,26 @@ function setSessionState() {
         url: 'http://localhost:8080/DASI/ActionServlet',
         method: 'POST',
         data: {
-            todo: 'hasActiveConsultation'
+            todo: 'currentSessionState'
         },
         dataType: 'json'
     })
         .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
-            console.log("Consultation active = " + response.hasActiveConsultation)
+            console.log("Response = " + response)
+            console.log("Active consultation = " + response.hasActiveConsultation)
+            console.log("Last consultation ended = " + response.lastConsultationEnded)
             hasActiveConsultation = response.hasActiveConsultation
-            if(response.hasActiveConsultation) {
+            if(response.lastConsultationEnded) {
+                $('#commentary-holder').removeClass('hidden')
+                $('#session-state-container').addClass('hidden')
+            } else if(response.hasActiveConsultation) {
                 $('#session-state').text("Session en cours")
+                $('#session-state-container').removeClass('hidden')
+                $('#commentary-holder').addClass('hidden')
             } else {
                 $('#session-state').text("Aucune session")
+                $('#session-state-container').removeClass('hidden')
+                $('#commentary-holder').addClass('hidden')
             }
         })
         .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
@@ -97,4 +106,31 @@ function handleAccessSession() {
     if(hasActiveConsultation) {
         window.location.href = './employee-dashboard-session.html'
     }
+}
+
+function handleSendComment() {
+
+    // Appel AJAX
+    $.ajax({
+        url: 'http://localhost:8080/DASI/ActionServlet',
+        method: 'POST',
+        data: {
+            todo: 'setCommentary',
+            commentary: $('#commentary-text').val()
+        },
+        dataType: 'json'
+    })
+        .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            console.log("Response = " + response)
+            if(response.valid) {
+                setSessionState()
+            }
+        })
+        .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+            console.log('Error', error); // LOG dans Console Javascript
+            alert("Erreur lors de l'appel AJAX");
+        })
+        .always(function () { // Fonction toujours appelée
+
+        });
 }

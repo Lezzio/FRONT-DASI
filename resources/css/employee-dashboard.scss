@@ -106,7 +106,6 @@ a {
 
   > .session-block {
     display: flex;
-    flex-direction: column;
     background: #AE76FF;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     width: 300px;
@@ -116,13 +115,69 @@ a {
     align-items: center;
     cursor: pointer;
 
-    > p {
-      margin: 0;
-    }
-
     &:hover {
       background: #6C2FCC;
     }
+
+    > * > p {
+      margin: 0;
+    }
+
+    > #commentary-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      > p {
+        margin: 10px;
+      }
+
+      > textarea {
+        resize: none;
+        font-family: "Microsoft Yi Baiti", "Verdana", sans-serif;
+        padding: 10px;
+        height: 80px;
+        width: 200px;
+        border-radius: 10px;
+
+        &:focus {
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        }
+      }
+
+      > div {
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 20px;
+        background: #C13636;
+        margin: 20px;
+
+        @extend %base-transition-duration;
+        &:hover {
+          @extend %base-transition-duration;
+          transform: scale(1.05);
+        }
+      }
+
+      &.hidden {
+        display: none;
+      }
+
+    }
+
+    > #session-state-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &.hidden {
+        display: none;
+      }
+
+    }
+
   }
 
 }

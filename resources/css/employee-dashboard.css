@@ -1,4 +1,4 @@
-#navbar > a > .button, #navbar > a > .button:hover {
+#navbar > a > .button, #navbar > a > .button:hover, .main-content > .session-block > #commentary-container > div, .main-content > .session-block > #commentary-container > div:hover {
   transition-duration: 0.3s;
 }
 
@@ -94,7 +94,6 @@ a {
 }
 .main-content > .session-block {
   display: flex;
-  flex-direction: column;
   background: #AE76FF;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   width: 300px;
@@ -104,11 +103,53 @@ a {
   align-items: center;
   cursor: pointer;
 }
-.main-content > .session-block > p {
-  margin: 0;
-}
 .main-content > .session-block:hover {
   background: #6C2FCC;
+}
+.main-content > .session-block > * > p {
+  margin: 0;
+}
+.main-content > .session-block > #commentary-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-content > .session-block > #commentary-container > p {
+  margin: 10px;
+}
+.main-content > .session-block > #commentary-container > textarea {
+  resize: none;
+  font-family: "Microsoft Yi Baiti", "Verdana", sans-serif;
+  padding: 10px;
+  height: 80px;
+  width: 200px;
+  border-radius: 10px;
+}
+.main-content > .session-block > #commentary-container > textarea:focus {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+.main-content > .session-block > #commentary-container > div {
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 20px;
+  background: #C13636;
+  margin: 20px;
+}
+.main-content > .session-block > #commentary-container > div:hover {
+  transform: scale(1.05);
+}
+.main-content > .session-block > #commentary-container.hidden {
+  display: none;
+}
+.main-content > .session-block > #session-state-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-content > .session-block > #session-state-container.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=employee-dashboard.css.map */

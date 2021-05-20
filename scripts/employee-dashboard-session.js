@@ -176,7 +176,6 @@ function endButton() {
             console.log('Error', error); // LOG dans Console Javascript
             alert("Erreur lors de l'appel AJAX");
         })
-
 }
 
 function updateStateButton() {

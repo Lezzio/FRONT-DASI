@@ -4,6 +4,7 @@ and radio group
  */
 
 .inspi-category {
+
   > .star-level {
     font-size: 0;
     white-space: nowrap;
@@ -64,4 +65,5 @@ and radio group
   > .star-level.star-4 i ~ i ~ i ~ i {
     width: 100%;
   }
+
 }

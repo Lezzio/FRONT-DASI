@@ -40,8 +40,15 @@
         <div class="gray-box"></div>
     </div>
     <div class="session-block" onclick="handleAccessSession()">
-        <p>MA SEANCE</p>
-        <p id="session-state"></p>
+        <div id="commentary-container" class="hidden">
+            <p>LAISSER UN COMMENTAIRE</p>
+            <textarea id="commentary-text" placeholder="Votre commentaire sur la session..."></textarea>
+            <div id="send-comment-button" onclick="handleSendComment()">CONFIRMER FIN DE SEANCE</div>
+        </div>
+        <div id="session-state-container">
+            <p>MA SEANCE</p>
+            <p id="session-state"></p>
+        </div>
     </div>
 
 </div>
