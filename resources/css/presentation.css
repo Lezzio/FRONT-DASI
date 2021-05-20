@@ -1,4 +1,4 @@
-#navbar > a > .button, #navbar > a > .button:hover, #middle-container > #presentation-button, #middle-container > #presentation-button:hover, #middle-container > .presentation-footer > span, #middle-container > .presentation-footer > span:hover {
+#navbar > a > .button, #navbar > a > .button:hover, #middle-container > a > #presentation-button, #middle-container > a > #presentation-button:hover, #middle-container > .presentation-footer > span, #middle-container > .presentation-footer > span:hover {
   transition-duration: 0.3s;
 }
 
@@ -16,6 +16,7 @@ body {
 
 a {
   color: white;
+  text-decoration: none;
 }
 
 #navbar {
@@ -71,7 +72,7 @@ a {
   border: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
-#middle-container > #presentation-button {
+#middle-container > a > #presentation-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +86,7 @@ a {
   border-radius: 32px;
   cursor: pointer;
 }
-#middle-container > #presentation-button:hover {
+#middle-container > a > #presentation-button:hover {
   transform: scale(1.04);
 }
 #middle-container > .presentation-footer {

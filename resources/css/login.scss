@@ -14,6 +14,7 @@ body {
 
 a {
   color: white;
+  text-decoration: none;
 }
 
 #navbar {
@@ -149,10 +150,10 @@ a {
     width: fit-content;
     margin: auto;
 
-    > span {
+    > a > span {
       cursor: pointer;
       font-weight: bold;
-      color: #AE76FF;
+      color: #AE76FF !important;
       @extend %base-transition-duration;
 
       &:hover {

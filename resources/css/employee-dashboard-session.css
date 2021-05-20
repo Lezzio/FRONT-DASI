@@ -225,6 +225,7 @@ p {
 }
 .main-content > .client-box > .client-info-container > .client-astro > .astral-profile-container > .astral-profile-row > .card > p:last-child {
   color: white;
+  font-size: 13px;
 }
 .main-content > .client-box > .client-info-container > .client-astro > .astral-profile-container > .astral-profile-row > .cyan {
   background-color: #AAE5E3;

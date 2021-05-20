@@ -1,4 +1,4 @@
-#navbar > a > .button, #navbar > a > .button:hover, #middle-container > #signup-button, #middle-container > #signup-button:hover, #middle-container > .signup-footer > span, #middle-container > .signup-footer > span:hover {
+#navbar > a > .button, #navbar > a > .button:hover, #middle-container > #signup-button, #middle-container > #signup-button:hover, #middle-container > .signup-footer > a > span, #middle-container > .signup-footer > a > span:hover {
   transition-duration: 0.3s;
 }
 
@@ -16,6 +16,7 @@ body {
 
 a {
   color: white;
+  text-decoration: none;
 }
 
 #navbar {
@@ -114,12 +115,12 @@ a {
   width: fit-content;
   margin: auto;
 }
-#middle-container > .signup-footer > span {
+#middle-container > .signup-footer > a > span {
   cursor: pointer;
   font-weight: bold;
-  color: #AE76FF;
+  color: #AE76FF !important;
 }
-#middle-container > .signup-footer > span:hover {
+#middle-container > .signup-footer > a > span:hover {
   text-decoration: underline;
 }
 

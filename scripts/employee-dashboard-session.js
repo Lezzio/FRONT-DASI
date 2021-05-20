@@ -201,15 +201,6 @@ function handlePrediction(name, value) {
     scoreHolder[name] = value
 
     //Fetch predictions from newly updated holder
-
-    /*
-        String love = request.getParameter("loveScore");
-        String health = request.getParameter("healthScore");
-        String work = request.getParameter("workScore");
-        String color = request.getParameter("colorHappiness");
-        String animal = request.getParameter("animalHappiness");
-     */
-
     // Appel AJAX
     $.ajax({
         url: 'http://localhost:8080/DASI/ActionServlet',
