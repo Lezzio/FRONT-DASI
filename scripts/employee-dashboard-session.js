@@ -1,6 +1,7 @@
 //var employeeId = 2;
 
 let consultationState = undefined
+let scoreHolder = { "level-love": 0, "level-health": 0, "level-work": 0 }
 
 $(document).ready(function () {
     displayActiveConsultation()
@@ -196,5 +197,39 @@ function updateStateButton() {
 }
 
 function handlePrediction(name, value) {
-    console.log("Called prediction for " + name + " and " + value)
+    //Update holder
+    scoreHolder[name] = value
+
+    //Fetch predictions from newly updated holder
+
+    /*
+        String love = request.getParameter("loveScore");
+        String health = request.getParameter("healthScore");
+        String work = request.getParameter("workScore");
+        String color = request.getParameter("colorHappiness");
+        String animal = request.getParameter("animalHappiness");
+     */
+
+    // Appel AJAX
+    $.ajax({
+        url: 'http://localhost:8080/DASI/ActionServlet',
+        method: 'POST',
+        data: {
+            todo: 'getPredicitionForClient',
+            loveScore: scoreHolder["level-love"],
+            healthScore: scoreHolder["level-health"],
+            workScore: scoreHolder["level-work"]
+        },
+        dataType: 'json'
+    })
+        .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            console.log('Response', response); // LOG dans Console Javascript
+            $("#love").text(response.love)
+            $("#health").text(response.health)
+            $("#work").text(response.work)
+        })
+        .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+            console.log('Error', error); // LOG dans Console Javascript
+            alert("Erreur lors de l'appel AJAX");
+        })
 }
