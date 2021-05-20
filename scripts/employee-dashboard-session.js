@@ -194,3 +194,7 @@ function updateStateButton() {
             .removeClass("start")
     }
 }
+
+function handlePrediction(value) {
+    console.log("Called prediction for " + value)
+}
