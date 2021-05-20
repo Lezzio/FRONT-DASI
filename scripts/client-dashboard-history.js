@@ -38,7 +38,7 @@ function getHistory(){
                     }
 
                     $('.medium-container').append(`
-                        <div class=${currentClass}>
+                        <div class="${currentClass}">
                             <p class="field">${element.day}</p>
                             <p class="field">${element.mediumName}</p>
                             <p class="field">${element.minutes} minutes</p>
