@@ -1,6 +1,7 @@
 
 $(document).ready(function () {
     drawNumberConsultationsByMediumChart();
+    drawClientDistributionByEmployee();
 });
 
 function drawNumberConsultationsByMediumChart() {
@@ -15,6 +16,25 @@ function drawNumberConsultationsByMediumChart() {
         .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
             console.log('Response', response); // LOG dans Console Javascript
             buildBarChart('left-chart', response, 'Nombre de consultations par medium', '', 'Nombre')
+        })
+        .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
+            console.log('Error',error); // LOG dans Console Javascript
+            alert("Erreur lors de l'appel AJAX");
+        })
+}
+
+function drawClientDistributionByEmployee() {
+    $.ajax({
+        url: './ActionServlet',
+        method: 'POST',
+        data: {
+            todo: 'employeeDistribution'
+        },
+        dataType: 'json'
+    })
+        .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
+            console.log('Response', response); // LOG dans Console Javascript
+            buildBarChart('right-chart', response, 'Distribution des clients par employé', '', 'Nombre')
         })
         .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
             console.log('Error',error); // LOG dans Console Javascript
