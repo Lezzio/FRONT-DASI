@@ -22,6 +22,7 @@ function displayActiveConsultation() {
             if (response !== null) {
                 displayActiveMedium(response.medium)
                 displayActiveClient(response.client)
+                getClientHistory(response.client.id)
                 console.log("Startdate = " + response.startDate)
                 if(response.startDate !== null && response.startDate !== undefined) {
                     console.log("Got here = " + response.startDate)
@@ -88,7 +89,6 @@ function displayActiveClient(client) {
 }
 
 function getClientHistory(clientId) {
-    /*
     $.ajax({
         url: 'http://localhost:8080/DASI/ActionServlet',
         method: 'POST',
@@ -108,7 +108,7 @@ function getClientHistory(clientId) {
                         '<div class="history-box">' +
                         '<p class="history-date">' + element.endDate + '</p>' +
                         '<p class="history-medium">' + element.mediumName + '</p>' +
-                        '<p class="history-commentary">' + element.commmentary + '</p>' +
+                        '<p class="history-commentary">' + element.commentary + '</p>' +
                         '</div>'
                     )
                 })
@@ -122,7 +122,6 @@ function getClientHistory(clientId) {
             console.log('Error', error); // LOG dans Console Javascript
             alert("Erreur lors de l'appel AJAX");
         })
-     */
 }
 
 function startButton() {
