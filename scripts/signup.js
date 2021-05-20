@@ -18,23 +18,12 @@ function signupButton() {
     var phone = $('#phone').val();
     var mail = $('#mail').val();
     var password = $('#password').val();
+    var zipCode = $('#postal-code').val()
 
-    if (firstName === "" || lastName === "" || birthdate === "" || civility === "" || address === "" || postal === "" || city === "" || phone === "" || mail === "" || password === "") {
+    if (firstName === "" || lastName === "" || birthdate === "" || civility === "" || address === "" || postal === "" || city === "" || phone === "" || mail === "" || password === "" || zipCode === "") {
         window.alert("Remplissez tous les champs svp");
         return;
     }
-
-
-    console.log(mail);
-    console.log(password);
-    console.log(firstName);
-    console.log(lastName);
-    console.log(birthdate);
-    console.log(civility);
-    console.log(address);
-    console.log(postal);
-    console.log(city);
-    console.log(phone);
 
 
     // Appel AJAX
@@ -52,7 +41,8 @@ function signupButton() {
             address: address,
             postal: postal,
             phone: phone,
-            city: city
+            city: city,
+            zipCode : zipCode
         },
         dataType: 'json'
     })
