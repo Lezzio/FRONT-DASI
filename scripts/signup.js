@@ -13,14 +13,13 @@ function signupButton() {
     var birthdate = $('#birthdate').val();
     var civility = $('#civility').val();
     var address = $('#address').val();
-    var postal = $('#postal').val();
+    var zipCode = $('#postal').val()
     var city = $('#city').val();
     var phone = $('#phone').val();
     var mail = $('#mail').val();
     var password = $('#password').val();
-    var zipCode = $('#postal-code').val()
 
-    if (firstName === "" || lastName === "" || birthdate === "" || civility === "" || address === "" || postal === "" || city === "" || phone === "" || mail === "" || password === "" || zipCode === "") {
+    if (firstName === "" || lastName === "" || birthdate === "" || civility === "" || address === "" || postal === "" || city === "" || mail === "" || password === "" || zipCode === "") {
         window.alert("Remplissez tous les champs svp");
         return;
     }
@@ -39,7 +38,6 @@ function signupButton() {
             birthdate: birthdate,
             civility: civility,
             address: address,
-            postal: postal,
             phone: phone,
             city: city,
             zipCode : zipCode
