@@ -20,7 +20,7 @@ function signupButton() {
     var password = $('#password').val();
 
     if (firstName === "" || lastName === "" || birthdate === "" || civility === "" || address === "" || postal === "" || city === "" || mail === "" || password === "" || zipCode === "") {
-        window.alert("Remplissez tous les champs svp");
+        console.log("Remplissez tous les champs svp");
         return;
     }
 
@@ -51,15 +51,15 @@ function signupButton() {
                 var lastName = response.client.lastName;
                 var firstName = response.client.firstName;
                 var mail = response.client.mail;
-                window.alert("Signup successful");
+                console.log("Signup successful");
                 $('#notification').html("Incription OK : " + id + " " + firstName + " " + lastName + " " + mail);  // Message pour le paragraphe de notification
                 // TODO: afficher les informations du client dans la notification
                 // Exemple: Connexion de Ada Lovelace (ID 1)
             } else if (response.exists) {
-                window.alert("Il existe déjà un client avec cette adresse mail");
+                console.log("Il existe déjà un client avec cette adresse mail");
                 $('#notification').html("Erreur lors de l'inscription"); // Message pour le paragraphe de notification
             } else {
-                window.alert("Votre inscription a échoué à cause d'un problème sur nos serveurs, veuillez réessayer plus tard");
+                console.log("Votre inscription a échoué à cause d'un problème sur nos serveurs, veuillez réessayer plus tard");
                 $('#notification').html("Erreur lors de l'inscription"); // Message pour le paragraphe de notification
             }
         })

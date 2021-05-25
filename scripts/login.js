@@ -40,11 +40,11 @@ function isConnected(){
                 } else if(response.userType === "employee"){
                     document.location.href = "./employee-dashboard.html";
                 } else{
-                    window.alert("Neither employee or client")
+                    console.log("Neither employee or client")
                 }
             }
             else {
-                window.alert("User not connected")
+                console.log("User not connected")
             }
         })
         .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
@@ -79,20 +79,20 @@ function loginButton() {
             if (response.connexion) {
                 if(response.userType === "employee"){
                     console.log("Employee");
-                    window.alert("Login successful");
+                    console.log("Login successful");
                     document.location.href = "./employee-dashboard.html";
                     $('#notification').html("Connexion Employee OK : " + id + " " + firstName + " " + lastName + " " + mail);  // Message pour le paragraphe de notification
                 } else if (response.userType === "client"){
                     console.log("Client");
-                    window.alert("Login successful");
+                    console.log("Login successful");
                     document.location.href = "./client-dashboard.html"
                     $('#notification').html("Connexion Client OK : " + id + " " + firstName + " " + lastName + " " + mail);  // Message pour le paragraphe de notification
                 }else{
-                    window.alert("Neither employee or client");
+                    console.log("Neither employee or client");
                 }
             }
             else {
-                window.alert("Wrong login or password");
+                console.log("Wrong login or password");
                 $('#notification').html("Erreur de Connexion"); // Message pour le paragraphe de notification
             }
         })

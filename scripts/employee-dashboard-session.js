@@ -33,7 +33,7 @@ function displayActiveConsultation() {
                 console.log("Consultation trouvée");
                 updateStateButton()
             } else {
-                window.alert("Impossible de trouver une consultation");
+                console.log("Impossible de trouver une consultation");
                 $('#notification').html("Erreur de consultation"); // Message pour le paragraphe de notification
             }
 
@@ -101,7 +101,7 @@ function getClientHistory(clientId) {
         .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
             console.log('Response', response); // LOG dans Console Javascript
             if (response.history) {
-                window.alert("Historique trouvé");
+                console.log("Historique trouvé");
                 $.each(response.history, function (index, element) {
 
                     $('#main-content').append(
@@ -113,7 +113,7 @@ function getClientHistory(clientId) {
                     )
                 })
             } else {
-                window.alert("Impossible de trouver une consultation");
+                console.log("Impossible de trouver une consultation");
                 $('#notification').html("Erreur de consultation"); // Message pour le paragraphe de notification
             }
 
@@ -141,7 +141,7 @@ function startButton() {
                 consultationState = "live"
                 updateStateButton()
             } else {
-                window.alert("Impossible de débuter la consultation");
+                console.log("Impossible de débuter la consultation");
             }
         })
         .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
@@ -168,7 +168,7 @@ function endButton() {
                 updateStateButton()
                 window.location.href = './employee-dashboard.html'
             } else {
-                window.alert("Impossible de terminer la consultation");
+                console.log("Impossible de terminer la consultation");
             }
         })
         .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX

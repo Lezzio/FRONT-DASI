@@ -33,10 +33,10 @@ function getTopFive() {
                     `)
                 })
 
-                window.alert("Top5 fetched");
+                console.log("Top5 fetched");
 
             } else {
-                window.alert("Le top5 est vide");
+                console.log("Le top5 est vide");
                 $('#notification').html("Erreur lors de la recherche des informations"); // Message pour le paragraphe de notification
             }
         })

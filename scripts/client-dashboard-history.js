@@ -17,7 +17,7 @@ function getHistory(){
         .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
             console.log('Response', response); // LOG dans Console Javascript
             if (response.history.length !== 0) {
-                window.alert("History found");
+                console.log("History found");
                 $('.medium-container').empty()
                 $.each(response.history, function (index, element) {
                     let currentClass;
@@ -32,7 +32,7 @@ function getHistory(){
                             currentClass = "session-row orange"
                             break
                         default:
-                            window.alert("Bad medium type")
+                            console.log("Bad medium type")
                             console.log(element.mediumType)
                             break
                     }
@@ -46,7 +46,7 @@ function getHistory(){
                     `)
                 })
             } else {
-                window.alert("Empty History");
+                console.log("Empty History");
                 $('#notification').html("Erreur de consultation"); // Message pour le paragraphe de notification
             }
 
