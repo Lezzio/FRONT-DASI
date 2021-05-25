@@ -92,7 +92,7 @@ function loginButton() {
                 }
             }
             else {
-                console.log("Wrong login or password");
+                window.alert("Wrong login or password");
                 $('#notification').html("Erreur de Connexion"); // Message pour le paragraphe de notification
             }
         })

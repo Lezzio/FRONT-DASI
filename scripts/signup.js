@@ -54,11 +54,9 @@ function signupButton() {
                 window.location.href = "./login.html"
                 console.log("Signup successful");
             } else if (response.exists) {
-                console.log("Il existe déjà un client avec cette adresse mail");
-                $('#notification').html("Erreur lors de l'inscription"); // Message pour le paragraphe de notification
+                window.alert("Il existe déjà un client avec cette adresse mail");
             } else {
                 console.log("Votre inscription a échoué à cause d'un problème sur nos serveurs, veuillez réessayer plus tard");
-                $('#notification').html("Erreur lors de l'inscription"); // Message pour le paragraphe de notification
             }
         })
         .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
