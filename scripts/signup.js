@@ -47,14 +47,12 @@ function signupButton() {
         .done(function (response) { // Fonction appelée en cas d'appel AJAX réussi
             console.log('Response', response); // LOG dans Console Javascript
             if (response.signup) {
-                var id = response.client.id;
-                var lastName = response.client.lastName;
-                var firstName = response.client.firstName;
-                var mail = response.client.mail;
+                let id = response.client.id;
+                let lastName = response.client.lastName;
+                let firstName = response.client.firstName;
+                let mail = response.client.mail;
+                window.location.href = "./login.html"
                 console.log("Signup successful");
-                $('#notification').html("Incription OK : " + id + " " + firstName + " " + lastName + " " + mail);  // Message pour le paragraphe de notification
-                // TODO: afficher les informations du client dans la notification
-                // Exemple: Connexion de Ada Lovelace (ID 1)
             } else if (response.exists) {
                 console.log("Il existe déjà un client avec cette adresse mail");
                 $('#notification').html("Erreur lors de l'inscription"); // Message pour le paragraphe de notification
