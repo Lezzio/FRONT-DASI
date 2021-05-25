@@ -123,12 +123,12 @@ a {
   font-size: 26px;
   text-align: center;
 }
-#middle-container > .medium-showcase > .more {
+#middle-container > .medium-showcase > a > .more {
   font-size: 30px;
   color: #33AFA6;
   cursor: pointer;
 }
-#middle-container > .medium-showcase > .more:hover {
+#middle-container > .medium-showcase > a > .more:hover {
   text-decoration: underline;
 }
 

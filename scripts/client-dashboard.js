@@ -118,8 +118,10 @@ function handleMediumClick(id) {
             //Then we redirect to another page (sent or not available)
             if (response.status === "available") {
                 window.location.href = './request-sent.html'
-            } else {
+            } else if(response.status === "notAvailable") {
                 window.location.href = './not-available.html'
+            } else if(response.status === "alreadyBooked") {
+                window.location.href = './already-booked.html'
             }
         })
         .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
