@@ -37,7 +37,6 @@ function getTopFive() {
 
             } else {
                 console.log("Le top5 est vide");
-                $('#notification').html("Erreur lors de la recherche des informations"); // Message pour le paragraphe de notification
             }
         })
         .fail(function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX

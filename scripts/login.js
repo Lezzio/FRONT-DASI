@@ -54,7 +54,6 @@ function isConnected(){
 }
 function loginButton() {
     console.log("clic sur le bouton de connexion"); // LOG dans Console Javascript
-    $('#notification').html("Connexion..."); // Message pour le paragraphe de notification
 
     // Récupération de la valeur des champs du formulaire
     var champLogin = $('#mail').val();
@@ -81,19 +80,16 @@ function loginButton() {
                     console.log("Employee");
                     console.log("Login successful");
                     document.location.href = "./employee-dashboard.html";
-                    $('#notification').html("Connexion Employee OK : " + id + " " + firstName + " " + lastName + " " + mail);  // Message pour le paragraphe de notification
                 } else if (response.userType === "client"){
                     console.log("Client");
                     console.log("Login successful");
                     document.location.href = "./client-dashboard.html"
-                    $('#notification').html("Connexion Client OK : " + id + " " + firstName + " " + lastName + " " + mail);  // Message pour le paragraphe de notification
                 }else{
                     console.log("Neither employee or client");
                 }
             }
             else {
                 window.alert("Wrong login or password");
-                $('#notification').html("Erreur de Connexion"); // Message pour le paragraphe de notification
             }
         })
         .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX

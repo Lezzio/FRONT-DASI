@@ -34,7 +34,6 @@ function displayActiveConsultation() {
                 updateStateButton()
             } else {
                 console.log("Impossible de trouver une consultation");
-                $('#notification').html("Erreur de consultation"); // Message pour le paragraphe de notification
             }
 
         })
@@ -114,7 +113,6 @@ function getClientHistory(clientId) {
                 })
             } else {
                 console.log("Impossible de trouver une consultation");
-                $('#notification').html("Erreur de consultation"); // Message pour le paragraphe de notification
             }
 
         })

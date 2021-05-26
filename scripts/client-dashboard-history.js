@@ -47,7 +47,6 @@ function getHistory(){
                 })
             } else {
                 console.log("Empty History");
-                $('#notification').html("Erreur de consultation"); // Message pour le paragraphe de notification
             }
 
         })

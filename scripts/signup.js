@@ -4,7 +4,6 @@ $(document).ready(function () {
 
 function signupButton() {
     console.log("clic sur le bouton d'inscription"); // LOG dans Console Javascript
-    $('#notification').html("Inscription..."); // Message pour le paragraphe de notification
 
     // Récupération de la valeur des champs du formulaire
 
