@@ -20,7 +20,7 @@ function signupButton() {
     var password = $('#password').val();
 
     if (firstName === "" || lastName === "" || birthdate === "" || civility === "" || address === "" || postal === "" || city === "" || mail === "" || password === "" || zipCode === "") {
-        console.log("Remplissez tous les champs svp");
+        window.alert("Remplissez tous les champs svp");
         return;
     }
 
